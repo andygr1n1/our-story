@@ -1,4 +1,4 @@
-import { Box, Button, Container, Heading, HStack, Image, Text, VStack } from '@chakra-ui/react'
+import { Box, Container, Image, VStack } from '@chakra-ui/react'
 import weddingImage from '/img/wedding.png'
 
 export const HomeIndex = () => {
