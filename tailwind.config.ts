@@ -12,6 +12,7 @@ module.exports = {
             allura: ['Allura', defaultConfig.theme.fontFamily.sans],
             inter: ['Inter', defaultConfig.theme.fontFamily.sans],
             atkinson: ['Atkinson Regular', defaultConfig.theme.fontFamily.sans],
+            montaga: ['Montaga', defaultConfig.theme.fontFamily.sans],
         },
         extend: {
             colors,

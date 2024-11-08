@@ -20,6 +20,14 @@
         -ms-user-select: all;
         user-select: all;
     }
+
+    body {
+        @apply bg-[#FCF9F7] text-slate-800;
+    }
+
+    h1 {
+        @apply text-5xl md:text-7xl;
+    }
 }
 
 @layer utilities {

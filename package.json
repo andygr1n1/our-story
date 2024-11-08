@@ -11,8 +11,6 @@
         "tsc": "tsc && yarn lint:fix"
     },
     "dependencies": {
-        "@chakra-ui/react": "^3.1.0",
-        "@emotion/react": "^11.13.3",
         "@tanstack/query-core": "^5.18.0",
         "@tanstack/react-query": "^5.40.0",
         "formik": "^2.4.6",
@@ -34,7 +32,6 @@
         "vite-plugin-node-polyfills": "^0.22.0"
     },
     "devDependencies": {
-        "@chakra-ui/cli": "^3.1.0",
         "@mertasan/tailwindcss-variables": "^2.7.0",
         "@tanstack/eslint-plugin-query": "^5.20.1",
         "@tanstack/react-query-devtools": "^5.17.18",
