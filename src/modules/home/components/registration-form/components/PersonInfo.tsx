@@ -5,6 +5,7 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
     const formikContext = useFormikContext<IRegistrationForm>()
 
     const personName = formikContext.values[`name${personNumber}` as keyof IRegistrationForm] as string
+    const personSecondName = formikContext.values[`secondName${personNumber}` as keyof IRegistrationForm] as string
     const personEmail = formikContext.values[`email${personNumber}` as keyof IRegistrationForm] as string
     const personPhone = formikContext.values[`phone${personNumber}` as keyof IRegistrationForm] as string
     const personOtherInfo = formikContext.values[`otherInfo${personNumber}` as keyof IRegistrationForm] as string
@@ -12,6 +13,10 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
     const personNameError =
         formikContext.touched[`name${personNumber}` as keyof IRegistrationForm] &&
         (formikContext.errors[`name${personNumber}` as keyof IRegistrationForm] as string)
+
+    const personSecondNameError =
+        formikContext.touched[`secondName${personNumber}` as keyof IRegistrationForm] &&
+        (formikContext.errors[`secondName${personNumber}` as keyof IRegistrationForm] as string)
 
     const personEmailError =
         formikContext.touched[`email${personNumber}` as keyof IRegistrationForm] &&
@@ -23,10 +28,10 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
 
     return (
         <Accordion.Item eventKey={personNumber.toString()}>
-            <Accordion.Header>Person {personNumber}</Accordion.Header>
-            <Accordion.Body>
+            <Accordion.Header>Guest {personNumber}</Accordion.Header>
+            <Accordion.Body className='flex flex-col gap-4'>
                 <Form.Group controlId={`name${personNumber}`}>
-                    <Form.Label>Name</Form.Label>
+                    <Form.Label>First Name</Form.Label>
                     <Form.Control
                         name={`name${personNumber}`}
                         size='lg'
@@ -39,7 +44,23 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
                     {personNameError && <Form.Control.Feedback type='invalid'>{personNameError}</Form.Control.Feedback>}
                 </Form.Group>
 
-                <Form.Group controlId={`email${personNumber}`} className='mt-3'>
+                <Form.Group controlId={`secondName${personNumber}`}>
+                    <Form.Label>Second Name</Form.Label>
+                    <Form.Control
+                        name={`secondName${personNumber}`}
+                        size='lg'
+                        type='text'
+                        placeholder='Enter your second name'
+                        value={personSecondName}
+                        onChange={formikContext.handleChange}
+                        isInvalid={!!personSecondNameError}
+                    />
+                    {personSecondNameError && (
+                        <Form.Control.Feedback type='invalid'>{personSecondNameError}</Form.Control.Feedback>
+                    )}
+                </Form.Group>
+
+                <Form.Group controlId={`email${personNumber}`}>
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
                         name={`email${personNumber}`}
@@ -50,10 +71,12 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
                         onChange={formikContext.handleChange}
                         isInvalid={!!personEmailError}
                     />
-                    {personEmailError && <Form.Control.Feedback type='invalid'>{personEmailError}</Form.Control.Feedback>}
+                    {personEmailError && (
+                        <Form.Control.Feedback type='invalid'>{personEmailError}</Form.Control.Feedback>
+                    )}
                 </Form.Group>
 
-                <Form.Group controlId={`phone${personNumber}`} className='mt-3'>
+                <Form.Group controlId={`phone${personNumber}`}>
                     <Form.Label>Phone number</Form.Label>
                     <Form.Control
                         name={`phone${personNumber}`}
@@ -65,10 +88,12 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
                         onChange={formikContext.handleChange}
                         isInvalid={!!personPhoneError}
                     />
-                    {personPhoneError && <Form.Control.Feedback type='invalid'>{personPhoneError}</Form.Control.Feedback>}
+                    {personPhoneError && (
+                        <Form.Control.Feedback type='invalid'>{personPhoneError}</Form.Control.Feedback>
+                    )}
                 </Form.Group>
 
-                <Form.Group controlId={`otherInfo${personNumber}`} className='mt-3'>
+                <Form.Group controlId={`otherInfo${personNumber}`}>
                     <Form.Label>Other information</Form.Label>
                     <Form.Control
                         name={`otherInfo${personNumber}`}

@@ -29,7 +29,21 @@
         "noPropertyAccessFromIndexSignature": true,
         "experimentalDecorators": false,
         "verbatimModuleSyntax": true,
-        "useUnknownInCatchVariables": false
+        "useUnknownInCatchVariables": false,
+        "plugins": [
+            { "name": "typescript-plugin-css-modules" },
+            {
+                "name": "gql.tada/ts-plugin",
+                "shouldCheckForColocatedFragments": false,
+                "schemas": [
+                    {
+                        "name": "our_story",
+                        "schema": "./schema.graphql",
+                        "tadaOutputLocation": "./src/graphql-env.d.ts"
+                    }
+                ]
+            }
+        ]
     },
     "include": ["src/**/*", "tests/**/*"],
     "exclude": ["node_modules"],

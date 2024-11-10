@@ -11,6 +11,10 @@ export const useValidate = () => {
             errors.name1 = '* Required field'
         }
 
+        if (!values.secondName1.trim().length) {
+            errors.secondName1 = '* Required field'
+        }
+
         if (!values.phone1.length) {
             errors.phone1 = 'Required field'
         }
@@ -30,6 +34,10 @@ export const useValidate = () => {
         if (!values.solo) {
             if (!values.name2.trim().length) {
                 errors.name2 = '* Required field'
+            }
+
+            if (!values.secondName2.trim().length) {
+                errors.secondName2 = '* Required field'
             }
 
             if (!values.phone2.length) {
