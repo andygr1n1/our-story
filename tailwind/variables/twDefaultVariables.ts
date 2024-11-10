@@ -1,17 +1,10 @@
 export default {
-    cText: 'black',
-    cTextHover: '#41313B',
-    //
-    'global-bg': '#fffafa',
-    'global-bg-plasma': '#dbeafeed',
-    //
-    'global-2-bg': 'rgba(255, 255, 255, 0.7)',
-    'global-2-bg-plasma': 'snow',
-    //
-    'global-3-bg': 'white',
-    'global-bg-regal': 'rgba(255, 255, 255, 0.9)',
-    // blue-500/50
-    'ghost-blue': 'rgb(59 130 246 / 0.5)',
-    /* antd overwrite */
-    'bg-elevated': '#fffafa',
+    alpha: '#14b8a6',
+    alphaRgba: '20, 184, 166',
+    alphaActive: '#0d9488',
+    alphaActiveRgba: '13, 148, 136',
+    beta: '#64748B',
+    betaActive: '#475569',
+    gamma: '#94A3B8',
+    gammaActive: '#768396',
 }

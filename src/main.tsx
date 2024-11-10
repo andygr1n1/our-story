@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { App } from './modules/app/App'
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { root$, Root$Provider } from './modules/app/mst/StoreProvider'
-import './styles/index.css'
+import './styles/index.scss'
 
 const queryClient = new QueryClient()
 

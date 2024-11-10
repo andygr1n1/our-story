@@ -1,0 +1,20 @@
+export type IPersonInfo = {
+    name: string
+    email: string
+    phone: string
+}
+
+export type IRegistrationForm = {
+    groupId?: string
+    name1: string
+    email1: string
+    phone1: string
+    otherInfo1: string
+    name2: string
+    email2: string
+    phone2: string
+    otherInfo2: string
+    /*  */
+    /* if only 1 person is registering */
+    solo?: boolean
+}

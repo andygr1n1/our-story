@@ -25,6 +25,9 @@ export default defineConfig(({ mode }) => {
                     javascriptEnabled: true,
                     additionalData: '@root-entry-name: default;',
                 },
+                scss: {
+                    api: 'modern-compiler',
+                },
             },
         },
         build: {

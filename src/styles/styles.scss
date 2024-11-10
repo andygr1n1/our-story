@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* variable */
+$alpha: var(--colors-alpha);
+
 @layer base {
     .noselect {
         -webkit-touch-callout: none;
@@ -39,4 +42,12 @@
         word-break: break-word !important;
         overflow-wrap: anywhere !important;
     }
+}
+
+.custom-icon {
+    @apply text-alpha hover:text-alphaActive hover:scale-110 duration-300 cursor-pointer;
+}
+
+.custom-icon:hover {
+    @apply border-alphaActive shadow-[0_0_0_0.25rem_rgba(var(--colors-alphaActiveRgba),0.25)] #{!important};
 }

@@ -1,0 +1,28 @@
+$alpha: var(--colors-alpha);
+$alphaActive: var(--colors-alphaActive);
+
+.accordion-button {
+    @apply cursor-default;
+    background-color: $alpha !important;
+    border-color: $alpha !important;
+    color: #fff !important; /* Text color */
+    transform: translateY(1px); /* Slightly move down to mimic button press */
+}
+
+.accordion-button:hover,
+.accordion-button:active,
+.accordion-button:focus {
+    @apply cursor-default shadow-[0_0_0_0.25rem_rgba(var(--colors-alphaActiveRgba),0)] #{!important};
+    // box-shadow: 0 0 0 0.2rem $alphaActive;
+    // filter: drop-shadow(0 0 0.2rem $alphaActive);
+}
+
+.accordion-button::after {
+    background-image: none;
+    // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z'/%3E%3C/svg%3E");
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: none;
+    // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z'/%3E%3C/svg%3E");
+}

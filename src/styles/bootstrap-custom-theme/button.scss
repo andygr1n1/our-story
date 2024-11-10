@@ -1,0 +1,17 @@
+$alpha: var(--colors-alpha);
+$alphaActive: var(--colors-alphaActive);
+
+.custom-button-bg {
+    @apply bg-alpha border-alpha text-white;
+}
+
+.custom-button-bg:hover,
+.custom-button-bg:focus,
+.custom-button-bg:focus-visible,
+.custom-button-bg:active {
+    @apply bg-alpha border-alphaActive shadow-[0_0_0_0.25rem_rgba(var(--colors-alphaActiveRgba),0.25)] #{!important};
+}
+
+.custom-button-bg:active {
+    transform: translateY(1px); /* Slightly move down to mimic button press */
+}
