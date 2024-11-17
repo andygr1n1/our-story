@@ -7,10 +7,12 @@ export type IPersonInfo = {
 export type IRegistrationForm = {
     groupId?: string
     name1: string
+    secondName1: string
     email1: string
     phone1: string
     otherInfo1: string
     name2: string
+    secondName2: string
     email2: string
     phone2: string
     otherInfo2: string

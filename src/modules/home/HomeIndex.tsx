@@ -6,6 +6,7 @@ import type { LegacyRef } from 'react'
 import { useParallax } from 'react-scroll-parallax'
 export const HomeIndex = () => {
     const { ref } = useParallax({ speed: 25 })
+
     return (
         <div>
             <InvitationImage />
