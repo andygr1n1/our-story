@@ -11,8 +11,8 @@ const RegistrationFormIndex = () => {
     const { submit } = useSubmit()
 
     return (
-        <Container className='flex justify-center items-center w-full'>
-            <Row className='shadow-lg p-5 bg-transparent rounded-lg w-full max-w-xl'>
+        <Container className='relative z-[20] flex justify-center items-center w-full'>
+            <Row className='shadow-lg py-4 md:p-5 bg-transparent rounded-lg w-full max-w-xl'>
                 <Col md={12}>
                     <h2 className='text-center mb-4 montaga-regular text-2xl'>Wedding Ceremony Registration</h2>
                     <Formik initialValues={initialValues} validate={validate} onSubmit={submit}>

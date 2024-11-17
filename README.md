@@ -13,6 +13,3 @@
 -   add people in telegram group after registration
 -   internalization in russian
 -   /admin for managing users (a table with all users and ability to edit data)
--   animate opacity, min height for top image section and bg transparent
--   flower affect as in kzen
--   on mobile inviatation image bigger on heigth

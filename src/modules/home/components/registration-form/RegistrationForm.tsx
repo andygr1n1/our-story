@@ -14,10 +14,10 @@ const RegistrationForm = () => {
     }, [solo])
 
     return (
-        <Form>
+        <Form className='z-[20] relative'>
             <Accordion activeKey={activeKey}>
                 <PersonInfo personNumber={1} />
-                <PersonInfo personNumber={2} />
+                {!solo && <PersonInfo personNumber={2} />}
             </Accordion>
 
             <div className='mt-4 form-check'>

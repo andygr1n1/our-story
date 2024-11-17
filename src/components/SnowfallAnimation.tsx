@@ -27,7 +27,7 @@ export const SnowfallAnimation: React.FC = () => {
     const flower = document.createElement('img')
     flower.style.width = '100px'
     flower.style.height = '100px'
-    flower.src = '/img/flower.png'
+    flower.src = '/img/flowers.png'
     flower.style.height = '100px'
     flower.style.width = '100px'
     const images = [flower]
@@ -36,11 +36,12 @@ export const SnowfallAnimation: React.FC = () => {
         <Snowfall
             // color={getRandomColor()} // Example color: Hot Pink
             snowflakeCount={5}
-            style={{ zIndex: 9999999, opacity: 50, position: 'fixed', width: '100vw', height: '100vh' }}
+            style={{ zIndex: 10, opacity: 20, position: 'fixed', width: '100vw', height: '100vh' }}
             images={images}
-            radius={[30, 30]}
+            radius={[20, 20]}
             wind={[0.01, 0.03]}
-            speed={[0.1, 0.3]}
+            speed={[0.5, 0.8]}
+            // changeFrequency={400}
         />
     )
 }
