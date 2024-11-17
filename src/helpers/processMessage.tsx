@@ -9,11 +9,17 @@ import toast from 'react-hot-toast'
 
 export const toastSuccess = (message?: ReactNode, props?: { message: ReactNode }) =>
     toast.success(
-        <div className='whitespace-normal flex w-full h-full items-center'>{props?.message || message}</div>,
+        <div className='whitespace-normal flex w-full h-full items-center text-center'>
+            {props?.message || message}
+        </div>,
         {
             id: !!message ? String(message) : String(props?.message),
         },
     )
 
 export const toastError = (message?: ReactNode, props?: { message: ReactNode }) =>
-    toast.error(<div className='whitespace-normal flex w-full h-full items-center'>{props?.message || message}</div>)
+    toast.error(
+        <div className='whitespace-normal flex w-full h-full text-center items-center'>
+            {props?.message || message}
+        </div>,
+    )
