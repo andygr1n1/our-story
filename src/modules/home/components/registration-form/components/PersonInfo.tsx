@@ -99,7 +99,7 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
                         name={`otherInfo${personNumber}`}
                         as='textarea'
                         size='lg'
-                        placeholder='Enter your other information'
+                        placeholder='Other information'
                         value={personOtherInfo}
                         onChange={formikContext.handleChange}
                     />

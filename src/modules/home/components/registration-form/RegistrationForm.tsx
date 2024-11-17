@@ -1,13 +1,17 @@
 import { Button, Accordion } from 'react-bootstrap'
 import { PersonInfo } from './components/PersonInfo'
 import { Field, Form, useFormikContext } from 'formik'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { IRegistrationForm } from './types'
 
 const RegistrationForm = () => {
     const formikContext = useFormikContext<IRegistrationForm>()
     const { solo } = formikContext.values
     const [activeKey, setActiveKey] = useState<string[]>(['1', '2'])
+
+    useEffect(() => {
+        setActiveKey(solo ? ['1'] : ['1', '2'])
+    }, [solo])
 
     return (
         <Form>
@@ -24,7 +28,6 @@ const RegistrationForm = () => {
                     className='form-check-input'
                     checked={solo}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                        setActiveKey(e.target.checked ? ['1'] : ['1', '2'])
                         formikContext.setFieldValue('solo', e.target.checked)
                     }}
                 />

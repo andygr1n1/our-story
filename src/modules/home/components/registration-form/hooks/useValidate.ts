@@ -55,6 +55,16 @@ export const useValidate = () => {
             if (!phonePatternPattern.test(values.phone2)) {
                 errors.phone2 = '* Invalid phone number'
             }
+
+            if (values.phone1 === values.phone2) {
+                errors.phone2 = 'Phone numbers must be different'
+                errors.phone1 = 'Phone numbers must be different'
+            }
+
+            if (values.email1 === values.email2) {
+                errors.email2 = 'Emails must be different'
+                errors.email1 = 'Emails must be different'
+            }
         }
 
         return errors
