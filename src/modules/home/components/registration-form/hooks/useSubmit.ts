@@ -2,8 +2,10 @@ import type { FormikHelpers } from 'formik'
 import type { IRegistrationForm } from '../types'
 import { useAddGuests } from './useAddGuests'
 import { toastSuccess } from '@/helpers/processMessage'
+import { useTranslation } from 'react-i18next'
 
 export const useSubmit = () => {
+    const { t } = useTranslation()
     const { addGuests } = useAddGuests()
 
     const submit = (values: IRegistrationForm, formikHelpers: FormikHelpers<IRegistrationForm>) => {
@@ -13,7 +15,7 @@ export const useSubmit = () => {
             values,
             onSuccess: () => {
                 formikHelpers.resetForm()
-                toastSuccess('Thank you for your registration!')
+                toastSuccess(t('Thank you for your registration!'))
             },
             onSettled: () => {
                 formikHelpers.setSubmitting(false)

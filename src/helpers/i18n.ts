@@ -31,6 +31,7 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                     'Something went wrong, please contact us directly':
                         'Something went wrong, please contact us directly',
                     'Telegram group': 'Telegram group',
+                    'Thank you for your registration!': 'Thank you for your registration!',
                 },
             },
             ru: {
@@ -58,6 +59,7 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                     'Something went wrong, please contact us directly':
                         'Что-то пошло не так, пожалуйста, свяжитесь с нами напрямую',
                     'Telegram group': 'Группа в Telegram',
+                    'Thank you for your registration!': 'Спасибо за регистрацию!',
                 },
             },
         },
