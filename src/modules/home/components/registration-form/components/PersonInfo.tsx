@@ -1,7 +1,9 @@
 import { useFormikContext } from 'formik'
 import { Form, Accordion } from 'react-bootstrap'
 import type { IRegistrationForm } from '../types'
+import { useTranslation } from 'react-i18next'
 export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
+    const { t } = useTranslation()
     const formikContext = useFormikContext<IRegistrationForm>()
 
     const personName = formikContext.values[`name${personNumber}` as keyof IRegistrationForm] as string
@@ -28,15 +30,20 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
 
     return (
         <Accordion.Item eventKey={personNumber.toString()}>
-            <Accordion.Header>Guest {personNumber}</Accordion.Header>
+            <Accordion.Header>
+                <div className='flex items-center gap-2'>
+                    <span className='caveat-500 text-2xl'>{t('Guest')}</span>
+                    <span className='caveat-500 text-2xl'>{personNumber}</span>
+                </div>
+            </Accordion.Header>
             <Accordion.Body className='flex flex-col gap-4'>
                 <Form.Group controlId={`name${personNumber}`}>
-                    <Form.Label>First Name</Form.Label>
+                    <Form.Label>{t('First Name')}</Form.Label>
                     <Form.Control
                         name={`name${personNumber}`}
                         size='lg'
                         type='text'
-                        placeholder='Enter your name'
+                        // placeholder='Enter your name'
                         value={personName}
                         onChange={formikContext.handleChange}
                         isInvalid={!!personNameError}
@@ -45,12 +52,12 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
                 </Form.Group>
 
                 <Form.Group controlId={`secondName${personNumber}`}>
-                    <Form.Label>Second Name</Form.Label>
+                    <Form.Label>{t('Last Name')}</Form.Label>
                     <Form.Control
                         name={`secondName${personNumber}`}
                         size='lg'
                         type='text'
-                        placeholder='Enter your second name'
+                        // placeholder='Enter your second name'
                         value={personSecondName}
                         onChange={formikContext.handleChange}
                         isInvalid={!!personSecondNameError}
@@ -61,12 +68,12 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
                 </Form.Group>
 
                 <Form.Group controlId={`email${personNumber}`}>
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label>{t('Email')}</Form.Label>
                     <Form.Control
                         name={`email${personNumber}`}
                         size='lg'
                         type='email'
-                        placeholder='Enter your email'
+                        // placeholder='Enter your email'
                         value={personEmail}
                         onChange={formikContext.handleChange}
                         isInvalid={!!personEmailError}
@@ -77,12 +84,12 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
                 </Form.Group>
 
                 <Form.Group controlId={`phone${personNumber}`}>
-                    <Form.Label>Phone number</Form.Label>
+                    <Form.Label>{t('Phone')}</Form.Label>
                     <Form.Control
                         name={`phone${personNumber}`}
                         size='lg'
                         type='tel'
-                        placeholder='Enter your phone number'
+                        // placeholder='Enter your phone number'
                         pattern='[0-9]*'
                         value={personPhone}
                         onChange={formikContext.handleChange}
@@ -94,12 +101,12 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
                 </Form.Group>
 
                 <Form.Group controlId={`otherInfo${personNumber}`}>
-                    <Form.Label>Other information</Form.Label>
+                    <Form.Label>{t('Wishes')}</Form.Label>
                     <Form.Control
                         name={`otherInfo${personNumber}`}
                         as='textarea'
                         size='lg'
-                        placeholder='Other information'
+                        // placeholder='Other information'
                         value={personOtherInfo}
                         onChange={formikContext.handleChange}
                     />

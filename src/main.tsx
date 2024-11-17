@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom/client'
+import './helpers/i18n'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { App } from './modules/app/App'
 import { Toaster } from 'react-hot-toast'

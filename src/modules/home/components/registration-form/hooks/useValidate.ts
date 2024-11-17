@@ -1,6 +1,8 @@
+import { useTranslation } from 'react-i18next'
 import type { IRegistrationForm } from '../types'
 
 export const useValidate = () => {
+    const { t } = useTranslation()
     const validate = (values: IRegistrationForm) => {
         const errors: Partial<Record<keyof IRegistrationForm, string>> = {}
 
@@ -8,62 +10,62 @@ export const useValidate = () => {
         const emailPattern = /^(?:[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})?$/
 
         if (!values.name1.trim().length) {
-            errors.name1 = '* Required field'
+            errors.name1 = t('* Required field')
         }
 
         if (!values.secondName1.trim().length) {
-            errors.secondName1 = '* Required field'
+            errors.secondName1 = t('* Required field')
         }
 
         if (!values.phone1.length) {
-            errors.phone1 = 'Required field'
+            errors.phone1 = t('* Required field')
         }
 
         if (!values.email1.length) {
-            errors.email1 = '* Required field'
+            errors.email1 = t('* Required field')
         }
 
         if (!emailPattern.test(values.email1)) {
-            errors.email1 = '* Invalid email'
+            errors.email1 = t('* Invalid email')
         }
 
         if (!phonePatternPattern.test(values.phone1)) {
-            errors.phone1 = '* Invalid phone number'
+            errors.phone1 = t('* Invalid phone number')
         }
 
         if (!values.solo) {
-            if (!values.name2.trim().length) {
-                errors.name2 = '* Required field'
-            }
-
-            if (!values.secondName2.trim().length) {
-                errors.secondName2 = '* Required field'
-            }
-
-            if (!values.phone2.length) {
-                errors.phone2 = '* Required field'
-            }
-
-            if (!values.email2.length) {
-                errors.email2 = '* Required field'
-            }
-
-            if (!emailPattern.test(values.email2)) {
-                errors.email2 = '* Invalid email'
-            }
-
-            if (!phonePatternPattern.test(values.phone2)) {
-                errors.phone2 = '* Invalid phone number'
-            }
-
             if (values.phone1 === values.phone2) {
-                errors.phone2 = 'Phone numbers must be different'
-                errors.phone1 = 'Phone numbers must be different'
+                errors.phone2 = t('Phone numbers must be different')
+                !errors.phone1 && (errors.phone1 = t('Phone numbers must be different'))
             }
 
             if (values.email1 === values.email2) {
-                errors.email2 = 'Emails must be different'
-                errors.email1 = 'Emails must be different'
+                errors.email2 = t('Emails must be different')
+                !errors.email1 && (errors.email1 = t('Emails must be different'))
+            }
+
+            if (!values.name2.trim().length) {
+                errors.name2 = t('* Required field')
+            }
+
+            if (!values.secondName2.trim().length) {
+                errors.secondName2 = t('* Required field')
+            }
+
+            if (!values.phone2.length) {
+                errors.phone2 = t('* Required field')
+            }
+
+            if (!values.email2.length) {
+                errors.email2 = t('* Required field')
+            }
+
+            if (!emailPattern.test(values.email2)) {
+                errors.email2 = t('* Invalid email')
+            }
+
+            if (!phonePatternPattern.test(values.phone2)) {
+                errors.phone2 = t('* Invalid phone number')
             }
         }
 

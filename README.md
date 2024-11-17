@@ -3,6 +3,7 @@
 ## Libraries
 
 -   react-scroll-parallax
+-   tippy.js (https://www.npmjs.com/package/@tippyjs/react )
 
 <!-- TODO -->
 
@@ -11,5 +12,4 @@
 -   send email on user registration with booking number
 -   guests can login by booking number and edit data
 -   add people in telegram group after registration
--   internalization in russian
 -   /admin for managing users (a table with all users and ability to edit data)
