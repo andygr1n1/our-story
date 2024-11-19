@@ -1,8 +1,8 @@
 export default {
-    alpha: '#14b8a6',
-    alphaRgba: '20, 184, 166',
-    alphaActive: '#0d9488',
-    alphaActiveRgba: '13, 148, 136',
+    alpha: '#B7CADB',
+    alphaRgba: '183, 202, 219',
+    alphaActive: '#b7c0db',
+    alphaActiveRgba: '183, 192, 219',
     beta: '#64748B',
     betaActive: '#475569',
     gamma: '#94A3B8',
