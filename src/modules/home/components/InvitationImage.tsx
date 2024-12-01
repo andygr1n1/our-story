@@ -30,18 +30,24 @@ export const InvitationImage = () => {
 
             <div className='flex gap-2 absolute bottom-2 right-2'>
                 <button
-                    className={cn('btn', i18n.language === 'en' ? 'btn-primary custom-button-bg' : 'btn-secondary')}
+                    className={cn(
+                        'btn relative min-w-10 min-h-10',
+                        i18n.language === 'en' ? 'btn-primary custom-button-bg' : 'btn-secondary',
+                    )}
                     type='button'
                     onClick={() => setLanguage('en')}
                 >
-                    en
+                    <span className='font-atkinson absolute-center pb-1'> en</span>
                 </button>
                 <button
-                    className={cn('btn', i18n.language === 'ru' ? 'btn-primary custom-button-bg' : 'btn-secondary')}
+                    className={cn(
+                        'btn relative min-w-10 min-h-10',
+                        i18n.language === 'ru' ? 'btn-primary custom-button-bg' : 'btn-secondary',
+                    )}
                     type='button'
                     onClick={() => setLanguage('ru')}
                 >
-                    ru
+                    <span className='font-atkinson absolute-center pb-1'>ru</span>
                 </button>
             </div>
         </div>
