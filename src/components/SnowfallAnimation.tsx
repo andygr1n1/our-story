@@ -24,23 +24,25 @@ export const SnowfallAnimation: React.FC = () => {
     //     const randomIndex = Math.floor(Math.random() * colors.length)
     //     return colors[randomIndex]
     // }
-    const flower = document.createElement('img')
-    flower.style.width = '100px'
-    flower.style.height = '100px'
-    flower.src = '/img/petal1.png'
-    flower.style.height = '100px'
-    flower.style.width = '100px'
-    const images = [flower]
+    const imageSources = ['/img/petal1.png', '/img/petal2.png', '/img/petal3.png']
+
+    const images = imageSources.map((src) => {
+        const img = document.createElement('img')
+        img.style.width = '100px'
+        img.style.height = '100px'
+        img.src = src
+        return img
+    })
 
     return (
         <Snowfall
             // color={getRandomColor()} // Example color: Hot Pink
-            snowflakeCount={10}
+            snowflakeCount={5}
             style={{ zIndex: 9999, opacity: 20, position: 'fixed', width: '100vw', height: '100vh' }}
             images={images}
-            radius={[40, 40]}
-            wind={[1, 0.5]}
-            speed={[0.3, 0.3]}
+            radius={[50, 50]}
+            wind={[0.5, 0.5]}
+            speed={[0.1, 0.1]}
             // changeFrequency={400}
         />
     )
