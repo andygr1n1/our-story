@@ -1,3 +1,4 @@
+import { HTTPError } from 'ky'
 import type { ReactNode } from 'react'
 import toast from 'react-hot-toast'
 
@@ -23,3 +24,22 @@ export const toastError = (message?: ReactNode, props?: { message: ReactNode }) 
             {props?.message || message}
         </div>,
     )
+
+export const resolveError = async (error?: unknown, process = true) => {
+    let errorMessage = `Unknown error ${error}`
+    if (error instanceof HTTPError && error.response) {
+        const errorJson = await error.response.json()
+        errorMessage = errorJson.message
+    } else if (error instanceof Error) {
+        errorMessage = error.message
+    }
+
+    console.log('errorMessage', errorMessage)
+
+    if (errorMessage.includes('signal is aborted without reason')) {
+        return undefined
+    }
+
+    process && toastError(errorMessage)
+    throw new Error(errorMessage)
+}

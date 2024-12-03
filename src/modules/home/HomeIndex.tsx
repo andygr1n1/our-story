@@ -1,20 +1,17 @@
-import { Footer } from './components/Footer'
-import RegistrationFormIndex from './components/registration-form/RegistrationFormIndex'
-import { Title } from './components/Title'
-import { InvitationImage } from './components/InvitationImage'
-import type { LegacyRef } from 'react'
-import { useParallax } from 'react-scroll-parallax'
-export const HomeIndex = () => {
-    const { ref } = useParallax({ speed: 25 })
+import { observer } from 'mobx-react-lite'
+import { useRoot$ } from '../app/mst/StoreProvider'
+import { Home } from './Home'
+import { Registration } from './Registration'
+import { Booking } from './Booking'
+
+export const HomeIndex = observer(() => {
+    const { isHome, isRegistration, isBooking } = useRoot$()
 
     return (
-        <div>
-            <InvitationImage />
-            <div ref={ref as LegacyRef<HTMLDivElement>}>
-                <Title />
-                <RegistrationFormIndex />
-            </div>
-            <Footer />
-        </div>
+        <>
+            {isHome && <Home />}
+            {isRegistration && <Registration />}
+            {isBooking && <Booking />}
+        </>
     )
-}
+})
