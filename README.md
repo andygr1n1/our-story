@@ -13,3 +13,7 @@
 -   guests can login by booking number and edit data
 -   add people in telegram group after registration
 -   /admin for managing users (a table with all users and ability to edit data)
+-   trigger on registration with email sending for me and Dasha
+
+- ссылки на телеграм, сайт ресторана, контактную информацию
+- ссылка на booking

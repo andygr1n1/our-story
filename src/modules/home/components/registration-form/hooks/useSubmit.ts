@@ -9,8 +9,6 @@ export const useSubmit = () => {
     const { addGuests } = useAddGuests()
 
     const submit = (values: IRegistrationForm, formikHelpers: FormikHelpers<IRegistrationForm>) => {
-        console.log('values', values)
-
         addGuests({
             values,
             onSuccess: () => {
