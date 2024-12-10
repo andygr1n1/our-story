@@ -1,6 +1,5 @@
 import { initGraphQLTada } from 'gql.tada'
-import type { introspection } from '../graphql-env.d.ts'
-import { GraphQLClient } from 'graphql-request'
+import type { introspection } from '../../graphql-env.d.ts'
 
 export const graphql = initGraphQLTada<{
     introspection: introspection
@@ -15,10 +14,7 @@ export const graphql = initGraphQLTada<{
     }
 }>()
 
-export type { FragmentOf, ResultOf, VariablesOf } from 'gql.tada'
-export { readFragment } from 'gql.tada'
 
-export const graphQLClient = () =>
-    new GraphQLClient(import.meta.env['VITE_CLIENT_ENDPOINT'], {
-        headers: { 'x-hasura-admin-secret': import.meta.env['VITE_X_HASURA_ADMIN_SECRET'] },
-    })
+export type { FragmentOf, ResultOf, VariablesOf } from 'gql.tada'
+
+export { readFragment } from 'gql.tada'

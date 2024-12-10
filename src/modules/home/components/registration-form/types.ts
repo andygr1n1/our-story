@@ -1,16 +1,13 @@
-export type IPersonInfo = {
-    name: string
-    email: string
-    phone: string
-}
-
 export type IRegistrationForm = {
-    groupId?: string
+    groupId: string
+    id1?: string
     name1: string
     secondName1: string
     email1: string
     phone1: string
     otherInfo1: string
+
+    id2?: string
     name2: string
     secondName2: string
     email2: string

@@ -5,8 +5,9 @@ import { useInitialValues } from './hooks/useInitialValues'
 import { useValidate } from './hooks/useValidate'
 import { useSubmit } from './hooks/useSubmit'
 import { useTranslation } from 'react-i18next'
+import { observer } from 'mobx-react-lite'
 
-const RegistrationFormIndex = () => {
+const RegistrationFormIndex = observer(() => {
     const { initialValues } = useInitialValues()
     const { validate } = useValidate()
     const { submit } = useSubmit()
@@ -17,13 +18,13 @@ const RegistrationFormIndex = () => {
             <Row className='shadow-lg py-4 md:p-5 bg-white rounded-lg w-full max-w-xl'>
                 <Col md={12}>
                     <h2 className='text-center mb-4 caveat-500 text-3xl'>{t('Wedding ceremony registration')}</h2>
-                    <Formik initialValues={initialValues} validate={validate} onSubmit={submit}>
+                    <Formik initialValues={initialValues} enableReinitialize validate={validate} onSubmit={submit}>
                         <RegistrationForm />
                     </Formik>
                 </Col>
             </Row>
         </Container>
     )
-}
+})
 
 export default RegistrationFormIndex

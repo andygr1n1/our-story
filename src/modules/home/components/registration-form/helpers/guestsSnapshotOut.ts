@@ -2,11 +2,11 @@ import type { IAddGuestsFragment } from '@/api/fragments/fragment_addGuests'
 import type { IRegistrationForm } from '../types'
 
 export const guestsSnapshotOut = ({ values }: { values: IRegistrationForm }): { objects: IAddGuestsFragment[] } => {
-    const group_id = crypto.randomUUID()
     const objects: IAddGuestsFragment[] = []
 
     const guest1: IAddGuestsFragment = {
-        group_id,
+        id: values.id1 || crypto.randomUUID(),
+        group_id: values.groupId,
         first_name: values.name1,
         last_name: values.secondName1,
         email: values.email1,
@@ -18,7 +18,8 @@ export const guestsSnapshotOut = ({ values }: { values: IRegistrationForm }): { 
 
     if (!values.solo) {
         guest2 = {
-            group_id,
+            id: values.id2 || crypto.randomUUID(),
+            group_id: values.groupId,
             first_name: values.name2,
             last_name: values.secondName2,
             email: values.email2,

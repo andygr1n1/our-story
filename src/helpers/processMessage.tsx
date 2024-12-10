@@ -34,9 +34,10 @@ export const resolveError = async (error?: unknown, process = true) => {
         errorMessage = error.message
     }
 
-    console.log('errorMessage', errorMessage)
-
-    if (errorMessage.includes('signal is aborted without reason')) {
+    if (
+        errorMessage.includes('signal is aborted without reason') ||
+        errorMessage.includes('The user aborted a request')
+    ) {
         return undefined
     }
 

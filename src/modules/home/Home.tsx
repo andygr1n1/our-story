@@ -1,22 +1,19 @@
+// import { useRoot$ } from '../app/mst/StoreProvider'
+// import { useEffect } from 'react'
+
+import { observer } from 'mobx-react-lite'
 import { useRoot$ } from '../app/mst/StoreProvider'
-import RegistrationFormIndex from './components/registration-form/RegistrationFormIndex'
-import { Title } from './components/Title'
-import { useEffect, type LegacyRef } from 'react'
-import { useParallax } from 'react-scroll-parallax'
+import { useEffect } from 'react'
 
-export const Home = () => {
-    const { ref } = useParallax({ speed: 25 })
-
-    const { handleLogin } = useRoot$()
+export const Home = observer(() => {
+    const { redirectToBookingIfAuthorized } = useRoot$()
     useEffect(() => {
-        console.log('rendering')
-        handleLogin()
+        redirectToBookingIfAuthorized()
     }, [])
 
     return (
-        <div className='animate-opacity-5' ref={ref as LegacyRef<HTMLDivElement>}>
-            <Title />
-            <RegistrationFormIndex />
+        <div>
+            <h1>Home</h1>
         </div>
     )
-}
+})
