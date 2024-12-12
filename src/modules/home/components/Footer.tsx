@@ -1,13 +1,13 @@
 import { Timer } from '@/components/Timer'
-import Tippy from '@tippyjs/react'
-import { useTranslation } from 'react-i18next'
+// import Tippy from '@tippyjs/react'
+// import { useTranslation } from 'react-i18next'
 
 export const Footer = () => {
-    const { t } = useTranslation()
+    // const { t } = useTranslation()
     return (
         <>
-            <div className='w-full h-full flex-col min-h-[200px] gap-4 flex justify-center items-center'>
-                <Tippy
+            <div className='w-full h-full flex-col min-h-[120px] gap-4 flex justify-center items-center'>
+                {/* <Tippy
                     // options
                     content={t('Telegram group')}
                     interactive={true}
@@ -24,7 +24,7 @@ export const Footer = () => {
                     >
                         <span className='simple-icons--telegram max-w-[40px] max-h-[40px] w-full h-full'></span>
                     </div>
-                </Tippy>
+                </Tippy> */}
 
                 <div className='flex justify-between gap-2 w-full px-10'>
                     <div className='great-vibes-regular text-alpha text-2xl flex-[30%]'>

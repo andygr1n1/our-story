@@ -17,7 +17,7 @@ export const Home = observer(() => {
     }, [])
 
     return (
-        <div className='animate-opacity-5' ref={ref as LegacyRef<HTMLDivElement>}>
+        <div className='animate-opacity-5 mb-10' ref={ref as LegacyRef<HTMLDivElement>}>
             <Title />
             <Timer />
             <BookingNumberFormIndex />
