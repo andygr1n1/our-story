@@ -7,6 +7,7 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
     const formikContext = useFormikContext<IRegistrationForm>()
 
     const disabled = formikContext.values.disabled
+    const isSubmitting = formikContext.isSubmitting
 
     const personName = formikContext.values[`name${personNumber}` as keyof IRegistrationForm] as string
     const personSecondName = formikContext.values[`secondName${personNumber}` as keyof IRegistrationForm] as string
@@ -50,6 +51,7 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
                         onChange={formikContext.handleChange}
                         isInvalid={!!personNameError}
                         readOnly={disabled}
+                        disabled={isSubmitting}
                     />
                     {personNameError && <Form.Control.Feedback type='invalid'>{personNameError}</Form.Control.Feedback>}
                 </Form.Group>
@@ -65,6 +67,7 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
                         onChange={formikContext.handleChange}
                         isInvalid={!!personSecondNameError}
                         readOnly={disabled}
+                        disabled={isSubmitting}
                     />
                     {personSecondNameError && (
                         <Form.Control.Feedback type='invalid'>{personSecondNameError}</Form.Control.Feedback>
@@ -82,6 +85,7 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
                         onChange={formikContext.handleChange}
                         isInvalid={!!personEmailError}
                         readOnly={disabled}
+                        disabled={isSubmitting}
                     />
                     {personEmailError && (
                         <Form.Control.Feedback type='invalid'>{personEmailError}</Form.Control.Feedback>
@@ -95,11 +99,13 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
                         size='lg'
                         type='tel'
                         // placeholder='Enter your phone number'
-                        pattern='[0-9]*'
+                        // pattern='[0-9]*'
+                        pattern='^[^a-zA-Z]*$'
                         value={personPhone}
                         onChange={formikContext.handleChange}
                         isInvalid={!!personPhoneError}
                         readOnly={disabled}
+                        disabled={isSubmitting}
                     />
                     {personPhoneError && (
                         <Form.Control.Feedback type='invalid'>{personPhoneError}</Form.Control.Feedback>
@@ -117,6 +123,7 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
                         value={personOtherInfo}
                         onChange={formikContext.handleChange}
                         readOnly={disabled}
+                        disabled={isSubmitting}
                     />
                 </Form.Group>
             </Accordion.Body>

@@ -14,6 +14,7 @@ export type IServerHandleLoginResponse = {
     sessionJWT: string
     registrationId: string
     bookingId: string
+    registration: boolean
 }
 
 export const server_handleLogin = async ({

@@ -12,6 +12,7 @@ export const Booking = observer(() => {
     const { t } = useTranslation()
 
     useEffect(() => {
+        window.scrollTo(0, 0)
         handleLogin()
     }, [bookingId])
 

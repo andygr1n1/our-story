@@ -6,7 +6,7 @@ export const useValidate = () => {
     const validate = (values: IRegistrationForm) => {
         const errors: Partial<Record<keyof IRegistrationForm, string>> = {}
 
-        const phonePatternPattern = /^(?:\+?\d*)$/
+        const phonePatternPattern = /^[^a-zA-Z]*$/
         const emailPattern = /^(?:[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})?$/
 
         if (!values.name1.trim().length) {

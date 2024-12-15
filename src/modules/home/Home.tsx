@@ -13,6 +13,7 @@ export const Home = observer(() => {
     const { ref } = useParallax({ speed: 25 })
     const { redirectToBookingIfAuthorized } = useRoot$()
     useEffect(() => {
+        window.scrollTo(0, 0)
         redirectToBookingIfAuthorized()
     }, [])
 

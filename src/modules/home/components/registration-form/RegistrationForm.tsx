@@ -35,6 +35,7 @@ const RegistrationForm = () => {
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                                 formikContext.setFieldValue('solo', e.target.checked)
                             }}
+                            disabled={formikContext.isSubmitting}
                         />
 
                         <label
@@ -48,7 +49,6 @@ const RegistrationForm = () => {
 
                 {!disabled && (
                     <Button
-                        onClick={() => formikContext.setSubmitting(true)}
                         size='lg'
                         type='submit'
                         className='mt-4 w-full min-h-[50px] flex items-center justify-center custom-button-bg btn-primary'

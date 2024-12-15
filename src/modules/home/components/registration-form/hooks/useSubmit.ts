@@ -11,6 +11,7 @@ export const useSubmit = () => {
     const { addGuests } = useAddGuests()
 
     const submit = (values: IRegistrationForm, formikHelpers: FormikHelpers<IRegistrationForm>) => {
+        formikHelpers.setSubmitting(true)
         addGuests({
             values,
             onSuccess: (bookingNumber) => {
