@@ -10,7 +10,8 @@
         "preview": "vite preview --port 9998",
         "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
         "tsc": "tsc && yarn lint:fix",
-        "gen": "dotenv -- cross-var gql.tada generate schema VITE_CLIENT_ENDPOINT -o schema.graphql --header \"x-hasura-admin-secret: VITE_X_HASURA_ADMIN_SECRET\" && gql.tada generate output"
+        "gen": "dotenv -- cross-var gql.tada generate schema VITE_CLIENT_ENDPOINT -o schema.graphql --header \"x-hasura-admin-secret: VITE_X_HASURA_ADMIN_SECRET\" && gql.tada generate output",
+        "gendev": "dotenv -- cross-var gql.tada generate schema http://localhost:7008/v1/graphql/ -o schema.graphql --header \"x-hasura-admin-secret: %VITE_X_HASURA_ADMIN_SECRET%\" && gql.tada generate output"
     },
     "dependencies": {
         "@tanstack/query-core": "^5.18.0",

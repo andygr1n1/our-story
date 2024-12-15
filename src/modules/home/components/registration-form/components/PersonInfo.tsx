@@ -6,6 +6,8 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
     const { t } = useTranslation()
     const formikContext = useFormikContext<IRegistrationForm>()
 
+    const disabled = formikContext.values.disabled
+
     const personName = formikContext.values[`name${personNumber}` as keyof IRegistrationForm] as string
     const personSecondName = formikContext.values[`secondName${personNumber}` as keyof IRegistrationForm] as string
     const personEmail = formikContext.values[`email${personNumber}` as keyof IRegistrationForm] as string
@@ -47,6 +49,7 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
                         value={personName}
                         onChange={formikContext.handleChange}
                         isInvalid={!!personNameError}
+                        readOnly={disabled}
                     />
                     {personNameError && <Form.Control.Feedback type='invalid'>{personNameError}</Form.Control.Feedback>}
                 </Form.Group>
@@ -61,6 +64,7 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
                         value={personSecondName}
                         onChange={formikContext.handleChange}
                         isInvalid={!!personSecondNameError}
+                        readOnly={disabled}
                     />
                     {personSecondNameError && (
                         <Form.Control.Feedback type='invalid'>{personSecondNameError}</Form.Control.Feedback>
@@ -77,6 +81,7 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
                         value={personEmail}
                         onChange={formikContext.handleChange}
                         isInvalid={!!personEmailError}
+                        readOnly={disabled}
                     />
                     {personEmailError && (
                         <Form.Control.Feedback type='invalid'>{personEmailError}</Form.Control.Feedback>
@@ -94,6 +99,7 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
                         value={personPhone}
                         onChange={formikContext.handleChange}
                         isInvalid={!!personPhoneError}
+                        readOnly={disabled}
                     />
                     {personPhoneError && (
                         <Form.Control.Feedback type='invalid'>{personPhoneError}</Form.Control.Feedback>
@@ -106,9 +112,11 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
                         name={`otherInfo${personNumber}`}
                         as='textarea'
                         size='lg'
+                        rows={5}
                         // placeholder='Other information'
                         value={personOtherInfo}
                         onChange={formikContext.handleChange}
+                        readOnly={disabled}
                     />
                 </Form.Group>
             </Accordion.Body>

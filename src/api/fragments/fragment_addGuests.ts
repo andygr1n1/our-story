@@ -1,7 +1,8 @@
-import { graphql, type ResultOf } from '../graphql'
+import { graphql, type ResultOf } from '../graphql/tada'
 
 export const addGuestsFragment = graphql(`
     fragment AddGuestsFragment on wedding_guests @_unmask {
+        id
         group_id
         first_name
         last_name

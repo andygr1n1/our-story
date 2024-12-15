@@ -1,14 +1,7 @@
-import { add, addMinutes, getUnixTime } from 'date-fns'
+import { addMinutes, getUnixTime } from 'date-fns'
 import Cookies from 'universal-cookie'
 import { jwtDecode } from 'jwt-decode'
 const cookies = new Cookies()
-
-export const setRememberUserCookie = (userId: string, remember_me: boolean) => {
-    return cookies.set('user', userId, {
-        path: '/',
-        expires: add(new Date(Date.now()), remember_me ? { days: 60 } : { minutes: 30 }),
-    })
-}
 
 export const setAccessIdInCookie = (id?: string | null) => {
     if (!id) return
@@ -20,11 +13,11 @@ export const setAccessIdInCookie = (id?: string | null) => {
     const exp = decodedToken.exp * 1000
     const expires = new Date(exp)
 
-    cookies.set('accessJWT', id, { path: '/', expires, sameSite: 'lax' })
+    cookies.set('ourstoryAccessJWT', id, { path: '/', expires, sameSite: 'lax' })
 }
 
 export const getAccessIdFromCookie = (): string | null => {
-    return cookies.get('accessJWT')
+    return cookies.get('ourstoryAccessJWT')
 }
 
 export const jwtVerify = (id?: string | null): boolean => {
@@ -51,13 +44,13 @@ export const setSessionJWTInCookie = (id?: string | null) => {
 
     const exp = decodedToken.exp * 1000
     const expires = new Date(exp)
-    cookies.set('sessionJWT', id, { path: '/', expires, sameSite: 'lax' })
+    cookies.set('ourstorySessionJWT', id, { path: '/', expires, sameSite: 'lax' })
 }
 export const getSessionJWTFromCookie = (): string | null => {
-    return cookies.get('sessionJWT')
+    return cookies.get('ourstorySessionJWT')
 }
 
 export const removeSessionJWTFromCookie = () => {
-    cookies.remove('sessionJWT')
-    cookies.remove('accessJWT')
+    cookies.remove('ourstorySessionJWT')
+    cookies.remove('ourstoryAccessJWT')
 }

@@ -3,9 +3,8 @@ import type { IRoot$ } from './types'
 import { Root$ } from './stores/Root.store'
 const storeContext = createContext<IRoot$ | null>(null)
 
-const generateRoot$ = () => Root$.create({})
 
-export const root$ = generateRoot$()
+export const createRoot$ = () => Root$.create({})
 
 export const useRoot$ = (): IRoot$ => {
     const store = useContext(storeContext)

@@ -5,10 +5,10 @@ import { toastError } from '@/helpers/processMessage'
 import { useTranslation } from 'react-i18next'
 
 export const useAddGuests = () => {
-    const { t } = useTranslation()
+    const { t, i18n } = useTranslation()
     const mutation = useMutation({
         mutationFn: async ({ values }: { values: IRegistrationForm }) => {
-            return mutation_addGuests({ values })
+            return mutation_addGuests({ values, language: i18n.language })
         },
         onError: (error) => {
             if (error.message.includes('wedding_guests_email_key')) {
@@ -27,7 +27,7 @@ export const useAddGuests = () => {
         onSettled,
     }: {
         values: IRegistrationForm
-        onSuccess?: () => void
+        onSuccess?: (res: string | null | undefined) => void
         onSettled?: () => void
     }) => {
         mutation.mutate({ values }, { onSuccess, onSettled })
