@@ -1,20 +1,24 @@
 import { Formik } from 'formik'
 import RegistrationForm from './RegistrationForm'
-import { useInitialValues } from './hooks/useInitialValues'
 import { useValidate } from './hooks/useValidate'
 import { useSubmit } from './hooks/useSubmit'
 import { observer } from 'mobx-react-lite'
+import { useBookingFormInitialValues } from './hooks/useBookingFormInitialValues'
+import { ButtonToggleEditBooking } from './components/ButtonToggleEditBooking'
 
-const RegistrationFormIndex = observer(() => {
-    const { initialValues } = useInitialValues()
+const BookingFormIndex = observer(() => {
+    const { initialValues } = useBookingFormInitialValues()
     const { validate } = useValidate()
     const { submit } = useSubmit()
 
     return (
         <Formik initialValues={initialValues} enableReinitialize validate={validate} onSubmit={submit}>
-            <RegistrationForm />
+            <>
+                <ButtonToggleEditBooking />
+                <RegistrationForm />
+            </>
         </Formik>
     )
 })
 
-export default RegistrationFormIndex
+export default BookingFormIndex

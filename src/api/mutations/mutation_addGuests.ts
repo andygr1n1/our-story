@@ -6,13 +6,7 @@ import { generateClient } from '../graphql/client'
 import { server_sendEmails } from '../server/server_sendEmails'
 import { compact } from 'lodash-es'
 
-export const mutation_addGuests = async ({
-    values,
-    language,
-}: {
-    values: IRegistrationForm
-    language: string
-}) => {
+export const mutation_addGuests = async ({ values, language }: { values: IRegistrationForm; language: string }) => {
     try {
         const client = await generateClient()
         if (!client) return
@@ -42,17 +36,34 @@ export const mutation_addGuests = async ({
             [addGuestsFragment],
         )
 
+        /* delete guest if booking editor is true and solo is true and second guest is already exists */
+        const deleteGuestQuery = graphql(`
+            mutation deleteGuest($id: uuid!) {
+                delete_wedding_guests(where: { id: { _eq: $id } }) {
+                    affected_rows
+                }
+            }
+        `)
+
+        values.solo &&
+            values.bookingEditor &&
+            values.id2 &&
+            (await client.request(deleteGuestQuery, { id: values.id2 }))
+        /*  */
+
         const { objects } = guestsSnapshotOut({ values })
 
         const res = await client.request(addGuestsQuery, { objects, id: values.groupId })
 
-        // server send emails
         const bookingId = res.update_wedding_groups_by_pk?.booking_number
         const guest1email = res?.insert_wedding_guests?.returning[0]?.email
         const guest2email = res?.insert_wedding_guests?.returning[1]?.email
         const emails = compact([guest1email, guest2email])
-        if (emails?.length && bookingId) {
-            await server_sendEmails({ emails, bookingId, language })
+        // server send emails
+        if (!values.bookingEditor) {
+            if (emails?.length && bookingId) {
+                await server_sendEmails({ emails, bookingId, language })
+            }
         }
         //
 

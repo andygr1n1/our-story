@@ -41,6 +41,12 @@ export const Root$ = types
             const tokenData = jwtDecode(token) as { booking_number: string }
             return tokenData.booking_number || null
         },
+        get registrationIdFromJwt(): string | null {
+            const token = getSessionJWTFromCookie()
+            if (!token) return null
+            const tokenData = jwtDecode(token) as { id: string }
+            return tokenData.id || null
+        },
     }))
     .volatile(() => ({
         abortController: new AbortController(),

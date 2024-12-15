@@ -16,4 +16,8 @@ export type IRegistrationForm = {
     /*  */
     /* if only 1 person is registering */
     solo?: boolean
+    /*  */
+    /* internal use */
+    disabled?: boolean
+    bookingEditor?: boolean
 }

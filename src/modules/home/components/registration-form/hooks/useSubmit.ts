@@ -14,7 +14,7 @@ export const useSubmit = () => {
         addGuests({
             values,
             onSuccess: (bookingNumber) => {
-                if (bookingNumber) {
+                if (bookingNumber && !values.bookingEditor) {
                     formikHelpers.resetForm()
                     toastSuccess(t('Thank you for your registration!'))
                     const url = new URL(window.location.href)
@@ -23,6 +23,9 @@ export const useSubmit = () => {
                     window.history.replaceState({}, '', url.toString())
                     onChangeField('registrationId', '')
                     onChangeField('bookingId', bookingNumber)
+                } else if (bookingNumber && values.bookingEditor) {
+                    formikHelpers.setFieldValue('disabled', true)
+                    toastSuccess(t('Updated successfully!'))
                 }
             },
             onSettled: () => {

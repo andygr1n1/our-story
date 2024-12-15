@@ -1,4 +1,4 @@
-// input:focus,
-// input:focus-visible {
-//     @apply border-alphaActive shadow-[0_0_0_0.25rem_rgba(var(--colors-alphaActiveRgba),0.25)] #{!important};
-// }
+input:not([type="checkbox"]):read-only,
+textarea:read-only {
+    @apply border-none hover:border-none active:border-none focus:border-none hover:shadow-none active:shadow-none focus:shadow-none;
+}

@@ -11,7 +11,7 @@ export const query_fetchUser = async ({ registrationId }: { registrationId: stri
             `
                 query fetchUser($id: uuid!) {
                     wedding_groups_by_pk(id: $id) {
-                        wedding_guests {
+                        wedding_guests(order_by: { primary: desc_nulls_last }) {
                             ...AddGuestsFragment
                         }
                     }

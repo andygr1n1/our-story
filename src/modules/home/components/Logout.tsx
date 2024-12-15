@@ -8,7 +8,7 @@ export const Logout = observer(() => {
     const { handleLogout } = useRoot$()
 
     return (
-        <Button size='lg' type='button' className='mt-4 w-full error-button-bg' onClick={handleLogout}>
+        <Button size='lg' type='button' className='w-full error-button-bg' onClick={handleLogout}>
             <span className='caveat-500 text-2xl'>{t('Logout')}</span>
         </Button>
     )

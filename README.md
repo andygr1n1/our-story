@@ -5,14 +5,6 @@
 -   react-scroll-parallax
 -   tippy.js (https://www.npmjs.com/package/@tippyjs/react )
 
-<!-- TODO -->
+TODO
 
--   guests can login by booking number and edit data
-    crud user
-
-activation button disabled which will be enabled 1 month before the event
-story?activation=40VBV
-
-<!--  -->
-<!--  -->
-<!--  -->
+-   story?activation=40VBV
