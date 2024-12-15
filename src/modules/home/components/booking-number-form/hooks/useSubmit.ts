@@ -9,13 +9,11 @@ export const useSubmit = () => {
     const { t } = useTranslation()
     const { handleLogin } = useRoot$()
     const submit = async (values: IBookingNumberForm, formikHelpers: FormikHelpers<IBookingNumberForm>) => {
-        console.log('values', values)
         const res = await server_handleLogin({
             bookingId: values.bookingNumber,
             registrationId: '',
             signal: new AbortController().signal,
         })
-        console.log('res', res)
         if (!res || res.message === 'unauthorized') {
             formikHelpers.setErrors({ bookingNumber: t('invalid booking number') })
             return

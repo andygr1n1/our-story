@@ -3,7 +3,6 @@ import type { IRegistrationForm } from '../types'
 
 export const useBookingFormInitialValues = (): { initialValues: IRegistrationForm } => {
     const { guestOne, guestTwo, registrationIdFromJwt } = useRoot$()
-    console.log(registrationIdFromJwt)
     return {
         initialValues: {
             groupId: registrationIdFromJwt || '',
