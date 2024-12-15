@@ -3,8 +3,16 @@ import { guestsSnapshotOut } from '@/modules/home/components/registration-form/h
 import { addGuestsFragment } from '../fragments/fragment_addGuests'
 import { graphql } from '../graphql/tada'
 import { generateClient } from '../graphql/client'
+import { server_sendEmails } from '../server/server_sendEmails'
+import { compact } from 'lodash-es'
 
-export const mutation_addGuests = async ({ values }: { values: IRegistrationForm }) => {
+export const mutation_addGuests = async ({
+    values,
+    language,
+}: {
+    values: IRegistrationForm
+    language: string
+}) => {
     try {
         const client = await generateClient()
         if (!client) return
@@ -27,7 +35,7 @@ export const mutation_addGuests = async ({ values }: { values: IRegistrationForm
                     }
 
                     update_wedding_groups_by_pk(pk_columns: { id: $id }, _set: { registration: true }) {
-                        id
+                        booking_number
                     }
                 }
             `,
@@ -36,11 +44,23 @@ export const mutation_addGuests = async ({ values }: { values: IRegistrationForm
 
         const { objects } = guestsSnapshotOut({ values })
 
-        return await client.request(addGuestsQuery, { objects, id: values.groupId })
+        const res = await client.request(addGuestsQuery, { objects, id: values.groupId })
+
+        // server send emails
+        const bookingId = res.update_wedding_groups_by_pk?.booking_number
+        const guest1email = res?.insert_wedding_guests?.returning[0]?.email
+        const guest2email = res?.insert_wedding_guests?.returning[1]?.email
+        const emails = compact([guest1email, guest2email])
+        if (emails?.length && bookingId) {
+            await server_sendEmails({ emails, bookingId, language })
+        }
+        //
+
+        return bookingId
     } catch (error) {
+        console.error(error)
+        throw new Error(error)
         // no need to resolve error here, it will be handled in human readable format
         // return await resolveError(error)
-        console.error(error)
-        return
     }
 }

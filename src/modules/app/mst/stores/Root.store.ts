@@ -15,7 +15,6 @@ export const Root$ = types
         registrationId: '',
         bookingId: '',
         /* $ */
-        'w2ddfwefqwddqwdfewf1__dqdw': true,
         isLoading: false,
         error: false,
         guestOne: types.maybeNull(User$),
@@ -82,18 +81,16 @@ export const Root$ = types
         },
     }))
     .actions((self) => ({
-        handleLogin: flow(function* _handleLogin() {
+        handleLogin: flow(function* _handleLogin(props?: { bookingId?: string }) {
             self.resetAbortController()
             self.validateRegistrationId()
             self.validateBookingId()
 
             const res = yield server_handleLogin({
                 registrationId: self.registrationId,
-                bookingId: self.bookingId,
+                bookingId: props?.bookingId || self.bookingId,
                 signal: self.abortController.signal,
             })
-
-            res && console.log('res', res, { jwt: res.refreshJWT, decoded: jwtDecode(res.refreshJWT) })
 
             if (res?.registration) {
                 self.bookingId = res.bookingId
@@ -105,7 +102,6 @@ export const Root$ = types
                 setSessionJWTInCookie(res.refreshJWT)
                 yield self.fetchUser({ registrationId: res.registrationId })
             } else if (res?.refreshJWT) {
-                console.log('refreshJWT', { jwt: res.refreshJWT, decoded: jwtDecode(res.refreshJWT) })
                 setAccessIdInCookie(res.accessJWT)
                 setSessionJWTInCookie(res.refreshJWT)
                 yield self.fetchUser({ registrationId: res.registrationId })
@@ -118,8 +114,18 @@ export const Root$ = types
                 window.history.replaceState({}, '', url.toString())
             }
             self.isLoading = false
-            // verify registrationId
         }),
+        handleLogout() {
+            removeSessionJWTFromCookie()
+            const url = new URL(window.location.href)
+            url.searchParams.delete('registration')
+            url.searchParams.delete('booking')
+            window.history.replaceState({}, '', url.toString())
+            self.bookingId = ''
+            self.registrationId = ''
+            self.guestOne = null
+            self.guestTwo = null
+        },
     }))
     .actions((self) => ({
         redirectToBookingIfAuthorized: flow(function* _redirectToBookingIfAuthorized() {

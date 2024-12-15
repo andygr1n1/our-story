@@ -6,23 +6,23 @@ import { useTranslation } from 'react-i18next'
 import { useRoot$ } from '@/modules/app/mst/StoreProvider'
 
 export const useSubmit = () => {
-    const { bookingIdFromJwt, onChangeField } = useRoot$()
+    const { onChangeField } = useRoot$()
     const { t } = useTranslation()
     const { addGuests } = useAddGuests()
 
     const submit = (values: IRegistrationForm, formikHelpers: FormikHelpers<IRegistrationForm>) => {
         addGuests({
             values,
-            onSuccess: () => {
-                formikHelpers.resetForm()
-                toastSuccess(t('Thank you for your registration!'))
-                if (bookingIdFromJwt) {
+            onSuccess: (bookingNumber) => {
+                if (bookingNumber) {
+                    formikHelpers.resetForm()
+                    toastSuccess(t('Thank you for your registration!'))
                     const url = new URL(window.location.href)
                     url.searchParams.delete('registration')
-                    url.searchParams.set('booking', bookingIdFromJwt)
+                    url.searchParams.set('booking', bookingNumber)
                     window.history.replaceState({}, '', url.toString())
                     onChangeField('registrationId', '')
-                    onChangeField('bookingId', bookingIdFromJwt)
+                    onChangeField('bookingId', bookingNumber)
                 }
             },
             onSettled: () => {

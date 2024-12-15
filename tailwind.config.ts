@@ -19,6 +19,7 @@ module.exports = {
             animation: animation.animation,
             keyframes: animation.keyframes,
             screens: {
+                xxs: '300px',
                 xs: '429px',
                 '2lg': '1200px',
                 '3xl': '1920px',

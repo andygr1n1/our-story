@@ -15,3 +15,18 @@ $alphaActive: var(--colors-alphaActive);
 .custom-button-bg:active {
     transform: translateY(1px); /* Slightly move down to mimic button press */
 }
+
+.error-button-bg {
+    @apply bg-rose-500 border-rose-300 text-white;
+}
+
+.error-button-bg:hover,
+.error-button-bg:focus,
+.error-button-bg:focus-visible,
+.error-button-bg:active {
+    @apply bg-rose-500 border-rose-300 shadow-[0_0_0_0.25rem_rgba(var(--colors-errorRgba),0.25)] #{!important};
+}
+
+.error-button-bg:active {
+    transform: translateY(1px); /* Slightly move down to mimic button press */
+}

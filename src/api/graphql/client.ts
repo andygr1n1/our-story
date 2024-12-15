@@ -6,7 +6,10 @@ export const generateClient = async (): Promise<GraphQLClient | null> => {
 
     const { ourstoryAccessJWT } = await getAccessJwt()
 
-    if (!ourstoryAccessJWT) return null
+    if (!ourstoryAccessJWT) {
+        console.error('generateClient: no access jwt')
+        return null
+    }
 
     const Authorization = `Bearer ${ourstoryAccessJWT}`
 
