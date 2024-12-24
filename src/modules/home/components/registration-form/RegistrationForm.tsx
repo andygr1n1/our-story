@@ -49,6 +49,7 @@ const RegistrationForm = () => {
 
                 {!disabled && (
                     <Button
+                        disabled={formikContext.isSubmitting}
                         size='lg'
                         type='submit'
                         className='mt-4 w-full min-h-[50px] flex items-center justify-center custom-button-bg btn-primary'
@@ -59,9 +60,6 @@ const RegistrationForm = () => {
                             <span className='caveat-500 text-2xl'>{bookingId ? t('update') : t('Register')}</span>
                         )}
                     </Button>
-                )}
-                {formikContext.isSubmitting && (
-                    <div className='absolute z-50 opacity-45 left-0 top-0 bottom-0 right-0 bg-transparent w-full h-full flex justify-center items-center' />
                 )}
             </Form>
         </>

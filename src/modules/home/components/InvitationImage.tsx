@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import invitation from '/img/invitation.jpeg'
 import { cn } from '@/helpers/cn'
-import { useEffect } from 'react'
 
 export const InvitationImage = () => {
     const { i18n } = useTranslation()
@@ -10,13 +9,6 @@ export const InvitationImage = () => {
         i18n.changeLanguage(lng)
         localStorage.setItem('i18nextLng', lng)
     }
-
-    useEffect(() => {
-        const savedLng = localStorage.getItem('i18nextLng')
-        if (savedLng) {
-            i18n.changeLanguage(savedLng)
-        }
-    }, [])
 
     return (
         <div className='w-full h-full z-[20] relative'>

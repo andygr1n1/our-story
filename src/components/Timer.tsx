@@ -52,12 +52,3 @@ export const Timer: React.FC<{ variant?: 'small' }> = ({ variant }) => {
         </div>
     )
 }
-
-//   ;<div className=' font-bold gap-2 font-kzen flex  items-center'>
-//       <div className='flex text-alpha caveat-500'>
-//           {daysLeft} {t('days_short_version')}
-//       </div>
-//       <div className='relative text-center text-alpha caveat-500'>
-//           <span className='min-w-[200px] left-[-140px]'> {timeLeft}</span>
-//       </div>
-//   </div>
