@@ -28,11 +28,12 @@ export const Title = () => {
                 {t('Please join us to celebrate our marriage')}
             </div> */}
             <motion.div
+                initial={{ opacity: 0, scale: 0.65, y: 50 }}
                 animate={inView ? 'visible' : 'hidden'}
                 variants={variants}
                 transition={{ duration: 2, ease: 'easeOut' }}
                 ref={ref}
-                className='my-10 flex flex-col gap-10 z-[0]'
+                className='my-10 flex flex-col gap-10 max-h-[500px] max-w-[500px] mx-auto'
             >
                 <h1 className='great-vibes-regular flex flex-col gap-3 my-10 text-center text-[#c0822b] font-bold tracking-wider  '>
                     <span className='transform -rotate-12 translate-x-[-25px]'>{t('Daria')}</span>
