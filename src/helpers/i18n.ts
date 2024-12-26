@@ -11,7 +11,7 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                 translation: {
                     'Please join us to celebrate our marriage': 'Please join us to celebrate our marriage',
                     'Daria & Andrei': 'Daria & Andrei',
-                    'May 2, 2025': 'May 2, 2025',
+                    'May 2, 2025': 'May, 2025',
                     'Wedding ceremony registration': 'Wedding ceremony registration',
                     'Solo registration': 'Solo registration (you can always add more guests)',
                     register: 'Register',
@@ -54,7 +54,7 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                     'Please join us to celebrate our marriage':
                         'Пожалуйста, присоединяйтесь, чтобы отпраздновать нашу свадьбу',
                     'Daria & Andrei': 'Дарья и Андрей',
-                    'May 2, 2025': '2 Мая , 2025',
+                    'May 2, 2025': 'Май, 2025',
                     'Wedding ceremony registration': 'Бланк регистрации',
                     'Solo registration': 'Регистрация одного гостя (вы всегда сможете добавить других)',
                     register: 'Регистрация',

@@ -8,3 +8,9 @@
 TODO
 
 -   story?activation=40VBV
+-   calendar translation
+-   red heart
+-   another background
+-   registration form
+-   register - translation
+-   remove border from registration form

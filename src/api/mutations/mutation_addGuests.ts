@@ -55,7 +55,6 @@ export const mutation_addGuests = async ({ values, language }: { values: IRegist
         const bookingId = res.update_wedding_groups_by_pk?.booking_number
         const guest1email = res?.insert_wedding_guests?.returning[0]?.email
         const guest2email = res?.insert_wedding_guests?.returning[1]?.email
-        console.log('emails', [guest1email, guest2email])
         const emails = compact([guest1email, guest2email])
         // server send emails
         if (!values.bookingEditor) {

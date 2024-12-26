@@ -1,13 +1,13 @@
-import { InvitationImage } from '@/modules/home/components/InvitationImage'
+import { Head } from '@/modules/home/components/Head'
 import { useInvitationId } from '@/modules/home/hooks/useInvitationId'
 import type { PropsWithChildren } from 'react'
-
+import styles from './RootLayout.module.scss'
 export const RootLayout: React.FC<PropsWithChildren> = ({ children }) => {
     useInvitationId()
 
     return (
-        <div>
-            <InvitationImage />
+        <div className={styles['root-layout']}>
+            <Head />
             {children}
         </div>
     )

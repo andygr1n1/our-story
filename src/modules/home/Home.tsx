@@ -20,7 +20,7 @@ export const Home = observer(() => {
     return (
         <div className='animate-opacity-5 mb-10' ref={ref as LegacyRef<HTMLDivElement>}>
             <Title />
-            <Timer />
+            {/* <Timer /> */}
             <BookingNumberFormIndex />
         </div>
     )

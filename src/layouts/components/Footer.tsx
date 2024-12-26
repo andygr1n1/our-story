@@ -6,7 +6,7 @@ export const Footer = () => {
     const { t } = useTranslation()
     return (
         <>
-            <div className='w-full h-full flex-col min-h-[120px] mb-10 gap-4 flex justify-center items-center'>
+            <div className='w-full h-full flex-col min-h-[120px] gap-4 flex justify-center items-center'>
                 {/* <Tippy
                     // options
                     content={t('Telegram group')}
@@ -27,18 +27,15 @@ export const Footer = () => {
                 </Tippy> */}
 
                 <div className='flex justify-between flex-col md:flex-row gap-2 w-full px-10'>
-                    <div className='great-vibes-regular text-alpha text-2xl md:flex-[30%] xxs:text-center md:text-left my-10 md:my-0'>
+                    <div className='text-sm md:flex-[30%] xxs:text-center md:text-left my-10 md:my-0 roboto-slab-100 sm:items-start flex flex-col justify-center'>
                         <div>{`${t('Daria')}: +373 78 579 842 | +351 936 744 188 `}</div>
                         <div>{`${t('Andrei')}: +373 68 953 913`}</div>
                     </div>
-                    <div className='great-vibes-regular md:flex-[30%] text-center text-alpha text-2xl'>
+                    <div className='great-vibes-regular md:flex-[30%] text-center text-2xl'>
                         {`${t('Daria')} ᥫ᭡ ${t('Andrei')}`}
+                        <Timer variant='small' />
                     </div>
-                    <div className='great-vibes-regular md:flex-[30%] text-center text-alpha text-2xl my-10 md:my-0'>
-                        <div className='flex justify-center md:justify-end items-center'>
-                            <Timer variant='small' />
-                        </div>
-                    </div>
+                    <div className='md:flex-[30%] text-center text-2xl my-10 md:my-0'>{/* empty block grid */}</div>
                 </div>
             </div>
         </>
