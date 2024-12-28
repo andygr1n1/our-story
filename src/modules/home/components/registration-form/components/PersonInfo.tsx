@@ -33,7 +33,7 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
 
     return (
         <Accordion.Item eventKey={personNumber.toString()}>
-            <Accordion.Header>
+            <Accordion.Header className='bg-alpha rounded-[5px] m-0 p-0'>
                 <div className='flex items-center gap-2'>
                     <span className='caveat-500 text-2xl'>{t('Guest')}</span>
                     <span className='caveat-500 text-2xl'>{personNumber}</span>

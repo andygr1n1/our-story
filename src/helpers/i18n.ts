@@ -11,9 +11,9 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                 translation: {
                     'Please join us to celebrate our marriage': 'Please join us to celebrate our marriage',
                     'Daria & Andrei': 'Daria & Andrei',
-                    'May 2, 2025': 'May 2, 2025',
+                    'May 2, 2025': 'May, 2025',
                     'Wedding ceremony registration': 'Wedding ceremony registration',
-                    'Solo registration': 'Solo registration (you can always add more guests)',
+                    'Solo registration': 'Solo registration',
                     register: 'Register',
                     update: 'Update',
                     Guest: 'Guest',
@@ -47,6 +47,14 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                     'Updated successfully!': 'Updated successfully!',
                     'invalid booking number': 'Invalid booking number',
                     'user must pass registration': 'User must pass registration',
+                    dearGuestsIntro:
+                        'One day in this year will be especially important for us, and we want to spend it in the circle of close friends! We are happy to invite you to our wedding!',
+                    marriageCeremony: 'Marriage ceremony',
+                    marriageCeremonyAddress:
+                        'The marriage ceremony will be held at the Kishinev Bible Church at Kuza Voda st, 17/6',
+                    wedding: 'Wedding',
+                    weddingAddress:
+                        'The wedding will be held at the Miadora restaurant at 25A Hristo Botev st.',
                 },
             },
             ru: {
@@ -54,9 +62,9 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                     'Please join us to celebrate our marriage':
                         'Пожалуйста, присоединяйтесь, чтобы отпраздновать нашу свадьбу',
                     'Daria & Andrei': 'Дарья и Андрей',
-                    'May 2, 2025': '2 Мая , 2025',
+                    'May 2, 2025': 'Май, 2025',
                     'Wedding ceremony registration': 'Бланк регистрации',
-                    'Solo registration': 'Регистрация одного гостя (вы всегда сможете добавить других)',
+                    'Solo registration': 'Регистрация одного гостя',
                     register: 'Регистрация',
                     update: 'Обновить',
                     Guest: 'Гость',
@@ -90,6 +98,14 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                     'Updated successfully!': 'Обновлено успешно!',
                     'invalid booking number': 'Неверный номер регистрации',
                     'user must pass registration': 'Пользователь должен пройти регистрацию',
+                    dearGuestsIntro:
+                        'Один день в этом году станет для нас особенно важным, и мы хотим провести его в кругу близких и друзей! С большим удовольствием приглашаем Вас на нашу свадьбу!',
+                    marriageCeremony: 'Венчание',
+                    marriageCeremonyAddress:
+                        'Венчание пройдёт в Кишинёвской библейской церкви по адресу ул. Куза Водэ, 17/6',
+                    wedding: 'Свадебное торжество',
+                    weddingAddress:
+                        'Свадебное торжество пройдёт в ресторане "Миадора" по адресу ул. Христо Ботев, д. 25А',
                 },
             },
         },

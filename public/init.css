@@ -1,7 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Kurale&family=Roboto+Slab:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montaga&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+.kurale-regular {
+    font-family: 'Kurale', serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto-slab-100 {
+    font-family: 'Roboto Slab', serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
 
 .caveat-500 {
     font-family: 'Caveat', cursive;
