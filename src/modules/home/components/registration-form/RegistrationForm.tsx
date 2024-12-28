@@ -38,10 +38,7 @@ const RegistrationForm = () => {
                             disabled={formikContext.isSubmitting}
                         />
 
-                        <label
-                            htmlFor='solo'
-                            className='form-check-label ml-2 select-none cursor-pointer caveat-500 text-2xl'
-                        >
+                        <label htmlFor='solo' className='form-check-label ml-2 select-none cursor-pointer text-base'>
                             {t('Solo registration')}
                         </label>
                     </div>

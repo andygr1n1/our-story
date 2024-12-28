@@ -19,7 +19,7 @@ export const Head = () => {
                     )}
                     onClick={() => setLanguage('en')}
                 >
-                    en
+                    En
                 </div>
                 <div
                     className={cn(
@@ -28,7 +28,7 @@ export const Head = () => {
                     )}
                     onClick={() => setLanguage('ru')}
                 >
-                    ru
+                    Ru
                 </div>
             </div>
         </div>
