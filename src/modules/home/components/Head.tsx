@@ -10,7 +10,7 @@ export const Head = () => {
     }
 
     return (
-        <div className='w-full h-full z-[20] relative min-h-[50px] border-b-solid border-gray-200 border-b-[0.5px]'>
+        <div className='w-full h-full z-[20] relative min-h-[50px] border-b-solid border-gray-200 border-b-[0.5px] shadow-md'>
             <div className='flex absolute bottom-2 right-2'>
                 <div
                     className={cn(
