@@ -31,12 +31,12 @@ export const Title = () => {
             ref={ref}
             className='my-10 flex flex-col gap-10 max-h-[500px] max-w-[500px] mx-auto'
         >
-            <h1 className='great-vibes-regular flex flex-col gap-3 my-10 text-center text-[#c0822b] font-bold tracking-wider  '>
+            <h1 className='great-vibes-regular flex flex-col gap-3 my-10 text-center text-[#c0822b] font-bold tracking-wider'>
                 <span className='transform -rotate-12 translate-x-[-25px]'>{t('Daria')}</span>
-                <div className='transform -rotate-12 translate-x-[250px] items-center justify-center mt-14 absolute'>
-                    <img src='/img/heart.png' alt='Heart' className='w-12 h-12' />
+                <div className='transform -rotate-12 translate-x-[250px] items-center justify-center mt-8 absolute'>
+                    <img src='/img/heart.png' alt='Heart' className='w-20 h-20' />
                 </div>
-                <span className='transform -rotate-12 translate-x-[30px]'>{t('Andrei')}</span>
+                <span className='transform -rotate-12 translate-x-[30px] mt-3'>{t('Andrei')}</span>
             </h1>
         </motion.div>
     )
