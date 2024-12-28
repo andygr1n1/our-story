@@ -33,6 +33,9 @@ export const Title = () => {
         >
             <h1 className='great-vibes-regular flex flex-col gap-3 my-10 text-center text-[#c0822b] font-bold tracking-wider  '>
                 <span className='transform -rotate-12 translate-x-[-25px]'>{t('Daria')}</span>
+                <div className='transform -rotate-12 translate-x-[250px] items-center justify-center mt-14 absolute'>
+                    <img src='/img/heart.png' alt='Heart' className='w-12 h-12' />
+                </div>
                 <span className='transform -rotate-12 translate-x-[30px]'>{t('Andrei')}</span>
             </h1>
         </motion.div>

@@ -27,11 +27,11 @@ export const Footer = () => {
                 </Tippy> */}
 
                 <div className='flex justify-between flex-col md:flex-row gap-2 w-full px-10'>
-                    <div className='text-sm md:flex-[30%] xxs:text-center md:text-left my-10 md:my-0 roboto-slab-100 sm:items-start flex flex-col justify-center'>
+                    <div className='text-sm md:flex-[30%] text-alpha xxs:text-center md:text-left my-10 md:my-0 roboto-slab-100 sm:items-start flex flex-col justify-center font-light'>
                         <div>{`${t('Daria')}: +373 78 579 842 | +351 936 744 188 `}</div>
                         <div>{`${t('Andrei')}: +373 68 953 913`}</div>
                     </div>
-                    <div className='great-vibes-regular md:flex-[30%] text-center text-2xl'>
+                    <div className='great-vibes-regular md:flex-[30%] text-center text-2xl text-alpha'>
                         {`${t('Daria')} ᥫ᭡ ${t('Andrei')}`}
                         <Timer variant='small' />
                     </div>

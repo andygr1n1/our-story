@@ -7,14 +7,12 @@ const BookingNumberForm = () => {
     const formikContext = useFormikContext<IBookingNumberForm>()
     const { t } = useTranslation()
 
-    const bookingNumberError =
-        formikContext.touched.bookingNumber && (formikContext.errors.bookingNumber as string)
-
+    const bookingNumberError = formikContext.touched.bookingNumber && (formikContext.errors.bookingNumber as string)
 
     return (
         <FormikForm className='z-[20] relative'>
             <Form.Group controlId={`bookingNumber`}>
-                <Form.Label>{t('Booking Number')}</Form.Label>
+                <Form.Label className='text-sm'>{t('Booking Number')}</Form.Label>
                 <Form.Control
                     name={`bookingNumber`}
                     size='lg'

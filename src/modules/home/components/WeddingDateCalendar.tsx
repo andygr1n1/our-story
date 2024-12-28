@@ -12,7 +12,7 @@ export const WeddingDateCalendar = () => {
 
     return (
         <div className='w-full flex justify-center items-center flex-col select-none'>
-            <div className='text-center mx-auto caveat-500 text-2xl'>{t('May 2, 2025')}</div>
+            <div className='text-center mx-auto caveat-500 text-3xl pb-2'>{t('May 2, 2025')}</div>
             <DayPicker
                 classNames={
                     {
