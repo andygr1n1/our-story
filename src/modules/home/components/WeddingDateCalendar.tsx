@@ -2,9 +2,13 @@ import { useState } from 'react'
 import { DayPicker } from 'react-day-picker'
 import './WeddingDateCalendar.css'
 import { useTranslation } from 'react-i18next'
+import i18next from 'i18next'
+import { enGB, ru } from 'date-fns/locale'
 export const WeddingDateCalendar = () => {
     const { t } = useTranslation()
     const [selected, setSelected] = useState<Date>(new Date('2025-05-02'))
+
+    const locale = i18next.language === 'en' ? enGB : ru
 
     return (
         <div className='w-full flex justify-center items-center flex-col select-none'>
@@ -27,6 +31,7 @@ export const WeddingDateCalendar = () => {
                 onSelect={() => setSelected(new Date('2025-05-02'))}
                 defaultMonth={selected}
                 required
+                locale={locale}
 
                 // footer={<DayPickerFooter {...props} />}
             />
