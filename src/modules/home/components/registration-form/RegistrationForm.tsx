@@ -54,7 +54,7 @@ const RegistrationForm = () => {
                         {formikContext.isSubmitting ? (
                             <span className='line-md--uploading-loop'></span>
                         ) : (
-                            <span className='caveat-500 text-2xl'>{bookingId ? t('update') : t('Register')}</span>
+                            <span className='caveat-500 text-2xl'>{bookingId ? t('update') : t('register')}</span>
                         )}
                     </Button>
                 )}

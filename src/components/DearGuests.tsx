@@ -12,7 +12,7 @@ export const DearGuests = () => {
             // viewport={{ once: true }}
             // style={{ x }}
         >
-            <div className='text-lg px-4 max-w-[500px] my-20 mx-auto font-kzen'>{t('dearGuestsIntro')}</div>
+            <div className='text-center text-lg px-4 max-w-xl my-20 mx-auto font-kzen'>{t('dearGuestsIntro')}</div>
         </motion.div>
     )
 }

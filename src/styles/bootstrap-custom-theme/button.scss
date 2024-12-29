@@ -8,7 +8,8 @@ $alphaActive: var(--colors-alphaActive);
 .custom-button-bg:hover,
 .custom-button-bg:focus,
 .custom-button-bg:focus-visible,
-.custom-button-bg:active {
+.custom-button-bg:active,
+.custom-button-bg:disabled {
     @apply bg-[#c0822b] border-alphaActive shadow-[0_0_0_0.25rem_rgba(var(--colors-alphaActiveRgba),0.25)] #{!important};
 }
 

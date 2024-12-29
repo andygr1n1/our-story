@@ -11,7 +11,7 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                 translation: {
                     'Please join us to celebrate our marriage': 'Please join us to celebrate our marriage',
                     'Daria & Andrei': 'Daria & Andrei',
-                    'May 2, 2025': 'May, 2025',
+                    'May 2, 2025': 'May 2, 2025',
                     'Wedding ceremony registration': 'Wedding ceremony registration',
                     'Solo registration': 'Solo registration',
                     register: 'Register',
@@ -40,7 +40,9 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                     Daria: 'Daria',
                     Logout: 'Logout',
                     'Registration Information': 'Important information',
-                    'Your Registration number is': 'Your Registration number is',
+                    yourRegistrationNumberIs: 'Your Registration number is',
+                    bookingIdDescription:
+                        'Please save this number, it will be needed for logging in from other devices',
                     miadora: 'Wedding location',
                     edit: 'Edit',
                     cancel: 'Cancel',
@@ -53,8 +55,11 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                     marriageCeremonyAddress:
                         'The marriage ceremony will be held at the Kishinev Bible Church at Kuza Voda st, 17/6',
                     wedding: 'Wedding',
-                    weddingAddress:
-                        'The wedding will be held at the Miadora restaurant at 25A Hristo Botev st.',
+                    weddingAddress: 'The wedding will be held at the Miadora restaurant at 25A Hristo Botev st.',
+                    dressCodeDescription:
+                        'We will be grateful if you support the style of our wedding and choose the following colors:',
+                    giftsAndFlowersDescription: 'Warm wishes bring in hearts, and gifts - in an envelope!',
+                    joinOurTelegramGroup: 'Join our Telegram group',
                 },
             },
             ru: {
@@ -62,7 +67,7 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                     'Please join us to celebrate our marriage':
                         'Пожалуйста, присоединяйтесь, чтобы отпраздновать нашу свадьбу',
                     'Daria & Andrei': 'Дарья и Андрей',
-                    'May 2, 2025': 'Май, 2025',
+                    'May 2, 2025': '2 мая, 2025',
                     'Wedding ceremony registration': 'Бланк регистрации',
                     'Solo registration': 'Регистрация одного гостя',
                     register: 'Регистрация',
@@ -91,7 +96,9 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                     Daria: 'Дарья',
                     Logout: 'Покинуть страницу авторизации',
                     'Registration Information': 'Важная информация',
-                    'Your Registration number is': 'Ваш номер регистрации',
+                    yourRegistrationNumberIs: 'Ваш номер регистрации',
+                    bookingIdDescription:
+                        'Пожалуйста, сохраните этот номер, он вам понадобится для входа в приложение с других устройств',
                     miadora: 'Место проведения свадьбы',
                     edit: 'Редактировать',
                     cancel: 'Отмена',
@@ -106,6 +113,10 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                     wedding: 'Свадебное торжество',
                     weddingAddress:
                         'Свадебное торжество пройдёт в ресторане "Миадора" по адресу ул. Христо Ботев, д. 25А',
+                    dressCodeDescription:
+                        'Будем благодарны, если вы поддержите стилистику нашей свадьбы и выберите следующие цвета:',
+                    giftsAndFlowersDescription: 'Свои тёплые пожелания приносите в сердцах, а подарки - в конверте!',
+                    joinOurTelegramGroup: 'Присоединяйтесь к нам в Телеграм',
                 },
             },
         },
