@@ -10,14 +10,14 @@ export const useInitialValues = (): { initialValues: IRegistrationForm } => {
             // guest one
             id1: guestOne?.id || '',
             name1: guestOne?.first_name || '',
-            secondName1: '',
+            secondName1: guestOne?.last_name || '',
             email1: '',
             phone1: '',
             otherInfo1: '',
             // guest two
             id2: guestTwo?.id || '',
             name2: guestTwo?.first_name || '',
-            secondName2: '',
+            secondName2: guestTwo?.last_name || '',
             email2: '',
             phone2: '',
             otherInfo2: '',

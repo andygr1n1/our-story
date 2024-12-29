@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite'
 import { useRoot$ } from '../app/mst/StoreProvider'
 import { Home } from './Home'
-import { Registration } from './registration/Registration'
+import { Registration } from './Registration'
 import { Booking } from './Booking'
 
 export const HomeIndex = observer(() => {
