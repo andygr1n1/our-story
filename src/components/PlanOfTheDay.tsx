@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { Map, AdvancedMarker, APIProvider } from '@vis.gl/react-google-maps'
-import { isUnderDevelopment } from '@/helpers/isUnderDevelopment.helper'
+import { /*  Map, AdvancedMarker,  */ APIProvider } from '@vis.gl/react-google-maps'
+// import { isUnderDevelopment } from '@/helpers/isUnderDevelopment.helper'
 export const PlanOfTheDay = () => {
     const { t } = useTranslation()
-    const markerPositionChurch = { lat: 46.978433276580745, lng: 28.86194137996509 }
-    const markerPositionMiadora = { lat: 46.98716551472651, lng: 28.845655311101467 }
+    // const markerPositionChurch = { lat: 46.978433276580745, lng: 28.86194137996509 }
+    // const markerPositionMiadora = { lat: 46.98716551472651, lng: 28.845655311101467 }
     const apiKey = import.meta.env['VITE_GOOGLE_MAPS_API_KEY']
 
     return (
@@ -21,20 +21,15 @@ export const PlanOfTheDay = () => {
                         <div>{t('marriageCeremonyAddress')}</div>
                     </div>
                     <div className='min-h-[300px] my-10 min-w-[400px] bg-gray-200 relative h-[500px] shadow-[0_0_24px_0_rgba(34,33,51,0.15)]'>
-                        {isUnderDevelopment() ? (
-                            <div className='text-center text-lg flex items-center justify-center h-full'>
-                                google map - dev mode
-                            </div>
-                        ) : (
-                            <Map
-                                defaultZoom={18}
-                                defaultCenter={markerPositionChurch}
-                                gestureHandling={'cooperative'}
-                                mapId='83009aab377338a4'
-                            >
-                                <AdvancedMarker position={markerPositionMiadora} />
-                            </Map>
-                        )}
+                        <iframe
+                            width='100%'
+                            height='100%'
+                            style={{ border: '0' }}
+                            loading='lazy'
+                            allowFullScreen
+                            referrerPolicy='no-referrer-when-downgrade'
+                            src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${t('marriageCeremonyAddress')}`}
+                        ></iframe>
                     </div>
                 </div>
             </motion.div>
@@ -49,20 +44,15 @@ export const PlanOfTheDay = () => {
                         <div>{t('weddingAddress')}</div>
                     </div>
                     <div className='min-h-[300px] my-10 min-w-[400px] bg-gray-200 relative h-[500px] shadow-[0_0_24px_0_rgba(34,33,51,0.15)]'>
-                        {isUnderDevelopment() ? (
-                            <div className='text-center text-lg flex items-center justify-center h-full'>
-                                google map - dev mode
-                            </div>
-                        ) : (
-                            <Map
-                                defaultZoom={18}
-                                defaultCenter={markerPositionMiadora}
-                                gestureHandling={'cooperative'}
-                                mapId='83009aab377338a4'
-                            >
-                                <AdvancedMarker position={markerPositionMiadora} />
-                            </Map>
-                        )}
+                        <iframe
+                            width='100%'
+                            height='100%'
+                            style={{ border: '0' }}
+                            loading='lazy'
+                            allowFullScreen
+                            referrerPolicy='no-referrer-when-downgrade'
+                            src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${t('weddingAddress')}`}
+                        ></iframe>
                     </div>
                 </div>
             </motion.div>
