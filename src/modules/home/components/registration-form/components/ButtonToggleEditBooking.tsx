@@ -2,15 +2,17 @@ import Tippy from '@tippyjs/react'
 import type { IRegistrationForm } from '../types'
 import { useFormikContext } from 'formik'
 import { useTranslation } from 'react-i18next'
+import { useWindowMatchMedia } from '@/hooks/useMatchMedia'
 
 export const ButtonToggleEditBooking = () => {
     const formikContext = useFormikContext<IRegistrationForm>()
     const { disabled } = formikContext.values
     const { t } = useTranslation()
+    const { isMobile } = useWindowMatchMedia(['isMobile'])
     return (
         <div className='flex justify-end absolute z-[60] top-[43px] right-[45px] duration-300'>
             {disabled ? (
-                <Tippy content={t('edit')} interactive={true}>
+                <Tippy disabled={!!isMobile} content={t('edit')} interactive={true}>
                     <div
                         id='edit-link'
                         data-tooltip-id='edit-link'
@@ -24,7 +26,7 @@ export const ButtonToggleEditBooking = () => {
                     </div>
                 </Tippy>
             ) : (
-                <Tippy content={t('cancel')} interactive={true}>
+                <Tippy disabled={!!isMobile} content={t('cancel')} interactive={true}>
                     <div
                         id='cancel-link'
                         data-tooltip-id='cancel-link'
