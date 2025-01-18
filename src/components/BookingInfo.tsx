@@ -17,7 +17,7 @@ export const BookingInfo = observer(() => {
             <div className='flex px-4 flex-col gap-2 max-w-xl text-center mx-auto text-lg font-kzen'>
                 <div>
                     {t('yourRegistrationNumberIs')}:
-                    <span className='text-[#c0822b] underline font-bold mx-2'>{bookingId}</span>
+                    <span className='text-alpha underline font-bold mx-2'>{bookingId}</span>
                 </div>
                 <div>{t('bookingIdDescription')}</div>
             </div>

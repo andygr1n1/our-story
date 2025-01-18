@@ -22,7 +22,7 @@ export const TelegramGroup = observer(() => {
                             className='custom-icon w-fit h-fit rounded-full max-w-16 max-h-16'
                         >
                             <a href='https://t.me/+fZ1Dpl9tXc85YWVi' target='_blank'>
-                                <span className='simple-icons--telegram w-16 h-16 text-[#c0822b]'></span>
+                                <span className='simple-icons--telegram w-16 h-16 text-alpha'></span>
                             </a>
                         </div>
                     </Tippy>

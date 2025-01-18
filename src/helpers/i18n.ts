@@ -50,7 +50,7 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                     'invalid booking number': 'Invalid booking number',
                     'user must pass registration': 'User must pass registration',
                     dearGuestsIntro:
-                        'One day in this year will be especially important for us, and we want to spend it in the circle of close friends! We are happy to invite you to our wedding!',
+                        'Love has brought us to this magical moment, and we want to share it with you! We invite you to be a part of our celebration, filled with happiness, warmth, and sincere emotions!',
                     marriageCeremony: 'Marriage ceremony',
                     marriageCeremonyAddress:
                         'The marriage ceremony will be held at the Kishinev Bible Church at Kuza Voda st, 17/6',
@@ -58,8 +58,9 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                     weddingAddress: 'The wedding will be held at the Miadora restaurant at 25A Hristo Botev st.',
                     dressCodeDescription:
                         'We will be grateful if you support the style of our wedding and choose the following colors:',
-                    giftsAndFlowersDescription: 'Warm wishes bring in hearts, and gifts - in an envelope!',
+                    giftsAndFlowersDescription: 'The greatest gift for us will be your warmth and smiles on this special day. However, if you wish to contribute a part of yourself to our new chapter in life, we would greatly appreciate your financial support for our plans.',
                     joinOurTelegramGroup: 'Join our Telegram group',
+                    ourWishes: 'Our wishes',
                 },
             },
             ru: {
@@ -106,17 +107,18 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                     'invalid booking number': 'Неверный номер регистрации',
                     'user must pass registration': 'Пользователь должен пройти регистрацию',
                     dearGuestsIntro:
-                        'Один день в этом году станет для нас особенно важным, и мы хотим провести его в кругу близких и друзей! С большим удовольствием приглашаем Вас на нашу свадьбу!',
+                        'Любовь привела нас к этому волшебному моменту, и мы хотим разделить его с вами! Приглашаем вас стать частью нашего праздника, наполненного счастьем, теплом и искренними эмоциями.',
                     marriageCeremony: 'Венчание',
                     marriageCeremonyAddress:
-                        'Венчание пройдёт в Кишинёвской библейской церкви по адресу ул. Куза Водэ, 17/6',
+                        'Венчание пройдёт в Кишинёвской Библейской церкви по адресу ул. Куза Водэ, 17/6',
                     wedding: 'Свадебное торжество',
                     weddingAddress:
                         'Свадебное торжество пройдёт в ресторане "Миадора" по адресу ул. Христо Ботев, д. 25А',
                     dressCodeDescription:
                         'Будем благодарны, если вы поддержите стилистику нашей свадьбы и выберите следующие цвета:',
-                    giftsAndFlowersDescription: 'Свои тёплые пожелания приносите в сердцах, а подарки - в конверте!',
+                    giftsAndFlowersDescription: 'Главным подарком для нас будет ваше тепло и улыбки в этот важный день. А если вы хотите внести частичку себя в нашу новую главу жизни, мы будем благодарны за финансовую поддержку наших планов.',
                     joinOurTelegramGroup: 'Присоединяйтесь к нам в Телеграм',
+                    ourWishes: 'Наши пожелания',
                 },
             },
         },

@@ -24,7 +24,7 @@ export const Head = () => {
             <div className='flex absolute bottom-2 right-2 items-center justify-center'>
                 <div
                     className={cn(
-                        'relative text-alpha min-w-7 min-h-7 font-atkinson cursor-pointer',
+                        'relative text-alpha min-w-7 min-h-7 font-atkinson cursor-pointer font-semibold',
                         i18n.language === 'en' ? 'underline' : '',
                     )}
                     onClick={() => setLanguage('en')}
@@ -33,7 +33,7 @@ export const Head = () => {
                 </div>
                 <div
                     className={cn(
-                        'relative min-w-7 min-h-7 text-alpha font-atkinson cursor-pointer',
+                        'relative min-w-7 min-h-7 text-alpha font-atkinson cursor-pointer font-semibold',
                         i18n.language === 'ru' ? 'underline' : '',
                     )}
                     onClick={() => setLanguage('ru')}
