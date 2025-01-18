@@ -50,7 +50,7 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                     'invalid booking number': 'Invalid booking number',
                     'user must pass registration': 'User must pass registration',
                     dearGuestsIntro:
-                        'Love has brought us to this magical moment, and we want to share it with you! We invite you to be a part of our celebration, filled with happiness, warmth, and sincere emotions.!',
+                        'Love has brought us to this magical moment, and we want to share it with you! We invite you to be a part of our celebration, filled with happiness, warmth, and sincere emotions!',
                     marriageCeremony: 'Marriage ceremony',
                     marriageCeremonyAddress:
                         'The marriage ceremony will be held at the Kishinev Bible Church at Kuza Voda st, 17/6',
@@ -118,7 +118,7 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                         'Будем благодарны, если вы поддержите стилистику нашей свадьбы и выберите следующие цвета:',
                     giftsAndFlowersDescription: 'Главным подарком для нас будет ваше тепло и улыбки в этот важный день. А если вы хотите внести частичку себя в нашу новую главу жизни, мы будем благодарны за финансовую поддержку наших планов.',
                     joinOurTelegramGroup: 'Присоединяйтесь к нам в Телеграм',
-                    ourWishes: 'Наши пожелпния',
+                    ourWishes: 'Наши пожелания',
                 },
             },
         },
