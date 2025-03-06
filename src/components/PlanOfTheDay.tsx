@@ -17,19 +17,8 @@ export const PlanOfTheDay = () => {
             >
                 <div className='text-lg  mt-20 mx-auto font-kzen'>
                     <div className='flex px-4 flex-col gap-2 max-w-xl text-center mx-auto'>
-                        <div className='caveat-500 text-3xl my-2'>- 12:00 - {t('marriageCeremony')}</div>
-                        <div>{t('marriageCeremonyAddress')}</div>
-                    </div>
-                    <div className='min-h-[300px] my-10 min-w-[400px] bg-gray-200 relative h-[500px] shadow-[0_0_24px_0_rgba(34,33,51,0.15)]'>
-                        <iframe
-                            width='100%'
-                            height='100%'
-                            style={{ border: '0' }}
-                            loading='lazy'
-                            allowFullScreen
-                            referrerPolicy='no-referrer-when-downgrade'
-                            src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${t('marriageCeremonyAddress')}`}
-                        ></iframe>
+                        <div className='caveat-500 text-3xl my-2'>- 14:30 - {t('guestsArrival')}</div>
+                        <div className='caveat-500 text-3xl my-2'>- 15:00 - {t('marriageCeremony')}</div>
                     </div>
                 </div>
             </motion.div>
@@ -40,7 +29,7 @@ export const PlanOfTheDay = () => {
             >
                 <div className='text-lg  mb-20 mx-auto font-kzen'>
                     <div className='flex px-4 flex-col gap-2 max-w-xl text-center mx-auto'>
-                        <div className='caveat-500 text-3xl my-2'>- 15:00 - {t('wedding')}</div>
+                        <div className='caveat-500 text-3xl my-2'>- 16:00 - {t('wedding')}</div>
                         <div>{t('weddingAddress')}</div>
                     </div>
                     <div className='min-h-[300px] my-10 min-w-[400px] bg-gray-200 relative h-[500px] shadow-[0_0_24px_0_rgba(34,33,51,0.15)]'>
