@@ -9,7 +9,8 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
         resources: {
             en: {
                 translation: {
-                    guestsArrival: 'We look forward to welcoming you, to share joyful moments before the ceremony begins.',
+                    guestsArrival:
+                        'We look forward to welcoming you, to share joyful moments before the ceremony begins.',
                     'Please join us to celebrate our marriage': 'Please join us to celebrate our marriage',
                     'Daria & Andrei': 'Daria & Andrei',
                     'May 2, 2025': 'May 2, 2025',
@@ -33,6 +34,7 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                     'Something went wrong, please contact us directly':
                         'Something went wrong, please contact us directly',
                     'Telegram group': 'Telegram group',
+                    WhatsApp: 'WhatsApp',
                     'Thank you for your registration!': 'Thank you for your registration!',
                     days_short_version: 'D',
                     'Booking Number': 'Registration Number',
@@ -59,14 +61,16 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                     weddingAddress: 'The wedding will be held at the Miadora restaurant at 25A Hristo Botev st.',
                     dressCodeDescription:
                         'We will be grateful if you support the style of our wedding and choose the following colors:',
-                    giftsAndFlowersDescription: 'The greatest gift for us will be your warmth and smiles on this special day. However, if you wish to contribute a part of yourself to our new chapter in life, we would greatly appreciate your financial support for our plans.',
-                    joinOurTelegramGroup: 'Join our Telegram group',
+                    giftsAndFlowersDescription:
+                        'The greatest gift for us will be your warmth and smiles on this special day. However, if you wish to contribute a part of yourself to our new chapter in life, we would greatly appreciate your financial support for our plans.',
+                    joinInSocialNetwork: 'Join our group',
                     ourWishes: 'Our wishes:',
                 },
             },
             ru: {
                 translation: {
-                     guestsArrival: 'С нетерпением ждем вас, чтобы разделить радостные мгновения перед началом церемонии.',
+                    guestsArrival:
+                        'С нетерпением ждем вас, чтобы разделить радостные мгновения перед началом церемонии.',
                     'Please join us to celebrate our marriage':
                         'Пожалуйста, присоединяйтесь, чтобы отпраздновать нашу свадьбу',
                     'Daria & Andrei': 'Дарья и Андрей',
@@ -91,6 +95,7 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                     'Something went wrong, please contact us directly':
                         'Что-то пошло не так, пожалуйста, свяжитесь с нами напрямую',
                     'Telegram group': 'Группа в Telegram',
+                    WhatsApp: 'WhatsApp',
                     'Thank you for your registration!': 'Спасибо за регистрацию!',
                     days_short_version: 'Д',
                     'Booking Number': 'Номер регистрации',
@@ -118,8 +123,9 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
                         'Свадебное торжество пройдёт в ресторане "Миадора" по адресу ул. Христо Ботев, д. 25А',
                     dressCodeDescription:
                         'Будем благодарны, если вы поддержите стилистику нашей свадьбы и выберите следующие цвета:',
-                    giftsAndFlowersDescription: 'Главным подарком для нас будет ваше тепло и улыбки в этот важный день. А если вы хотите внести частичку себя в нашу новую главу жизни, мы будем благодарны за финансовую поддержку наших планов.',
-                    joinOurTelegramGroup: 'Присоединяйтесь к нам в Телеграм',
+                    giftsAndFlowersDescription:
+                        'Главным подарком для нас будет ваше тепло и улыбки в этот важный день. А если вы хотите внести частичку себя в нашу новую главу жизни, мы будем благодарны за финансовую поддержку наших планов.',
+                    joinInSocialNetwork: 'Присоединяйтесь к нам в Социальных сетях',
                     ourWishes: 'Наши пожелания:',
                 },
             },

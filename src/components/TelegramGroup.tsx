@@ -11,7 +11,7 @@ export const TelegramGroup = observer(() => {
         <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 2 }}>
             <div className='flex px-4 flex-col gap-2 max-w-xl text-center mx-auto text-lg font-kzen'>
                 <div className='flex px-4 flex-col gap-2 max-w-xl text-center mx-auto text-lg font-kzen'>
-                    <div>{t('joinOurTelegramGroup')}</div>
+                    <div>{t('joinInSocialNetwork')}</div>
                 </div>
                 <div className='w-full h-full flex min-h-[120px] gap-10 justify-center items-center'>
                     <Tippy disabled={!!isMobile} content={t('Telegram group')} interactive={true}>
@@ -23,6 +23,22 @@ export const TelegramGroup = observer(() => {
                         >
                             <a href='https://t.me/+fZ1Dpl9tXc85YWVi' target='_blank'>
                                 <span className='simple-icons--telegram w-16 h-16 text-alpha'></span>
+                            </a>
+                        </div>
+                    </Tippy>
+                    <Tippy disabled={!!isMobile} content={t('WhatsApp')} interactive={true}>
+                        <div
+                            id='WhatsApp-link'
+                            data-tooltip-id='WhatsApp-link'
+                            data-tooltip-content='WhatsApp'
+                            className='custom-icon w-fit h-fit rounded-full min-h-16 min-w-16 relative max-w-16 max-h-16 bg-alpha'
+                        >
+                            <a
+                                href='https://chat.whatsapp.com/LncarlBTA6kDicYkHV9hFz'
+                                target='_blank'
+                                className='absolute top-[10%] left-[13%]'
+                            >
+                                <span className='ic--baseline-whatsapp w-12 h-12 text-white'></span>
                             </a>
                         </div>
                     </Tippy>
