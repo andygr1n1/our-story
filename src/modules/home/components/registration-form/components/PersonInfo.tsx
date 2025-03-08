@@ -2,7 +2,13 @@ import { useFormikContext } from 'formik'
 import { Form, Accordion } from 'react-bootstrap'
 import type { IRegistrationForm } from '../types'
 import { useTranslation } from 'react-i18next'
-export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
+export const PersonInfo = ({
+    personNumber,
+    isSoloRegistration,
+}: {
+    personNumber: number
+    isSoloRegistration?: boolean
+}) => {
     const { t } = useTranslation()
     const formikContext = useFormikContext<IRegistrationForm>()
 
@@ -36,7 +42,7 @@ export const PersonInfo = ({ personNumber }: { personNumber: number }) => {
             <Accordion.Header className='bg-alpha rounded-[5px] m-0 p-0'>
                 <div className='flex items-center gap-2'>
                     <span className='caveat-500 text-2xl'>{t('Guest')}</span>
-                    <span className='caveat-500 text-2xl'>{personNumber}</span>
+                    {!isSoloRegistration && <span className='caveat-500 text-2xl'>{personNumber}</span>}
                 </div>
             </Accordion.Header>
             <Accordion.Body className='flex flex-col gap-4'>

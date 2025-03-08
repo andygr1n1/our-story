@@ -19,6 +19,7 @@ export const Root$ = types
         error: false,
         guestOne: types.maybeNull(User$),
         guestTwo: types.maybeNull(User$),
+        isSoloRegistration: false,
     })
     .actions((self) => ({
         onChangeField<Key extends keyof typeof self>(key: Key, value: (typeof self)[Key]) {
@@ -55,8 +56,9 @@ export const Root$ = types
         fetchUser: flow(function* fetchUser({ registrationId }: { registrationId: string }) {
             const res = yield* toGenerator(query_fetchUser({ registrationId }))
             if (res) {
-                self.guestOne = castToSnapshot(res?.[0] || null)
-                self.guestTwo = castToSnapshot(res?.[1] || null)
+                self.guestOne = castToSnapshot(res?.guests?.[0] || null)
+                self.guestTwo = castToSnapshot(res?.guests?.[1] || null)
+                self.isSoloRegistration = res?.isSolo
             }
         }),
     }))
