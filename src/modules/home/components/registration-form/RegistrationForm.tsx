@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next'
 import { useRoot$ } from '@/modules/app/mst/StoreProvider'
 
 const RegistrationForm = () => {
-    const { bookingId } = useRoot$()
+    const { bookingId, isSoloRegistration } = useRoot$()
     const formikContext = useFormikContext<IRegistrationForm>()
     const { solo, disabled } = formikContext.values
     const [activeKey, setActiveKey] = useState<string[]>(['1', '2'])
@@ -20,11 +20,11 @@ const RegistrationForm = () => {
         <>
             <Form className='z-[20] relative'>
                 <Accordion activeKey={activeKey}>
-                    <PersonInfo personNumber={1} />
-                    {!solo && <PersonInfo personNumber={2} />}
+                    <PersonInfo personNumber={1} isSoloRegistration={isSoloRegistration} />
+                    {!isSoloRegistration && !solo && <PersonInfo personNumber={2} />}
                 </Accordion>
 
-                {!disabled && (
+                {!disabled && !isSoloRegistration && (
                     <div className='mt-4 form-check flex items-center'>
                         <Field
                             type='checkbox'

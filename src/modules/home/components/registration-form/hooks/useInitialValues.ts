@@ -2,7 +2,7 @@ import { useRoot$ } from '@/modules/app/mst/StoreProvider'
 import type { IRegistrationForm } from '../types'
 
 export const useInitialValues = (): { initialValues: IRegistrationForm } => {
-    const { guestOne, guestTwo, registrationId } = useRoot$()
+    const { guestOne, guestTwo, registrationId, isSoloRegistration } = useRoot$()
 
     return {
         initialValues: {
@@ -22,7 +22,7 @@ export const useInitialValues = (): { initialValues: IRegistrationForm } => {
             phone2: '',
             otherInfo2: '',
             // solo?
-            solo: false,
+            solo: isSoloRegistration,
         },
     }
 }

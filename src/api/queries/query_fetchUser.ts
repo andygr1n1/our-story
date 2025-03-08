@@ -11,6 +11,7 @@ export const query_fetchUser = async ({ registrationId }: { registrationId: stri
             `
                 query fetchUser($id: uuid!) {
                     wedding_groups_by_pk(id: $id) {
+                        solo
                         wedding_guests(order_by: { primary: desc_nulls_last }) {
                             ...AddGuestsFragment
                         }
@@ -20,9 +21,12 @@ export const query_fetchUser = async ({ registrationId }: { registrationId: stri
             [addGuestsFragment],
         )
 
-        return await client
-            .request(query, { id: registrationId })
-            ?.then((res) => res?.wedding_groups_by_pk?.wedding_guests)
+        const { wedding_groups_by_pk } = await client.request(query, { id: registrationId })
+
+        return {
+            isSolo: wedding_groups_by_pk?.solo || false,
+            guests: wedding_groups_by_pk?.wedding_guests || [],
+        }
     } catch (error) {
         console.error(error)
         return
