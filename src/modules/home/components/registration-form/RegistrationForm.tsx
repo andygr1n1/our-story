@@ -1,6 +1,6 @@
 import { Button, Accordion } from 'react-bootstrap'
 import { PersonInfo } from './components/PersonInfo'
-import { Field, Form, useFormikContext } from 'formik'
+import { /* Field, */ Form, useFormikContext } from 'formik'
 import { useEffect, useState } from 'react'
 import type { IRegistrationForm } from './types'
 import { useTranslation } from 'react-i18next'
@@ -23,7 +23,7 @@ const RegistrationForm = () => {
                     <PersonInfo personNumber={1} isSoloRegistration={isSoloRegistration} />
                     {!isSoloRegistration && !solo && <PersonInfo personNumber={2} />}
                 </Accordion>
-
+{/* 
                 {!disabled && !isSoloRegistration && (
                     <div className='mt-4 form-check flex items-center'>
                         <Field
@@ -42,7 +42,7 @@ const RegistrationForm = () => {
                             {t('Solo registration')}
                         </label>
                     </div>
-                )}
+                )} */}
 
                 {!disabled && (
                     <Button
