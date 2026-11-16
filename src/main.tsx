@@ -3,6 +3,7 @@ import { App } from './modules/app/App'
 import { Toaster } from 'react-hot-toast'
 import { SnowfallAnimation } from './components/SnowfallAnimation'
 import './helpers/i18n'
+import './styles/tailwind.css'
 import './styles/index.scss'
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 

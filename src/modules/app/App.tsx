@@ -14,7 +14,7 @@ export const App = () => {
 
     return (
         <ParallaxProvider>
-            <BrowserRouter basename='/' future={{ v7_startTransition: true }}>
+            <BrowserRouter basename='/'>
                 <QueryClientProvider client={queryClient}>
                     <Root$Provider store={root$}>
                         <AppRoutes />

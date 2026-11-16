@@ -15,11 +15,11 @@ export enum MEDIA_QUERY_VALUES_ENUM {
     IS_LARGE_DESKTOP = '(min-width: 1280px)',
 }
 
-const MediaQuery = {
-    isMobile: MEDIA_QUERY_VALUES_ENUM.IS_MOBILE,
-    isTablet: MEDIA_QUERY_VALUES_ENUM.IS_TABLET,
-    isDesktop: MEDIA_QUERY_VALUES_ENUM.IS_DESKTOP,
-    isLargeDesktop: MEDIA_QUERY_VALUES_ENUM.IS_LARGE_DESKTOP,
+type MediaQuery = {
+    isMobile: MEDIA_QUERY_VALUES_ENUM.IS_MOBILE
+    isTablet: MEDIA_QUERY_VALUES_ENUM.IS_TABLET
+    isDesktop: MEDIA_QUERY_VALUES_ENUM.IS_DESKTOP
+    isLargeDesktop: MEDIA_QUERY_VALUES_ENUM.IS_LARGE_DESKTOP
 }
 
 /**
@@ -29,9 +29,9 @@ const MediaQuery = {
  *
  *
  */
-export const useWindowMatchMedia = (media?: (keyof typeof MediaQuery)[]) => {
+export const useWindowMatchMedia = (media?: (keyof MediaQuery)[]) => {
     let queries: MEDIA_QUERY_VALUES_ENUM[] = []
-    const media_devices: (keyof typeof MediaQuery)[] = []
+    const media_devices: (keyof MediaQuery)[] = []
 
     if (media) {
         media.forEach((m) => {
@@ -81,7 +81,7 @@ export const useWindowMatchMedia = (media?: (keyof typeof MediaQuery)[]) => {
             ...acc,
             [screen]: values[index],
         }),
-        {} as typeof MediaQuery,
+        {} as MediaQuery,
     )
 
     return QueryObject

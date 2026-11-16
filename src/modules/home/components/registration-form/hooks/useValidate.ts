@@ -36,12 +36,12 @@ export const useValidate = () => {
         if (!values.solo) {
             if (values.phone1 === values.phone2) {
                 errors.phone2 = t('Phone numbers must be different')
-                !errors.phone1 && (errors.phone1 = t('Phone numbers must be different'))
+                if (!errors.phone1) errors.phone1 = t('Phone numbers must be different')
             }
 
             if (values.email1 === values.email2) {
                 errors.email2 = t('Emails must be different')
-                !errors.email1 && (errors.email1 = t('Emails must be different'))
+                if (!errors.email1) errors.email1 = t('Emails must be different')
             }
 
             if (!values.name2.trim().length) {

@@ -27,9 +27,17 @@ export const toastError = (message?: ReactNode, props?: { message: ReactNode }) 
 
 export const resolveError = async (error?: unknown, process = true) => {
     let errorMessage = `Unknown error ${error}`
-    if (error instanceof HTTPError && error.response) {
-        const errorJson = await error.response.json()
-        errorMessage = errorJson.message
+    if (error instanceof HTTPError) {
+        // ky 2 consumes the error body itself and exposes it as `error.data`;
+        // calling error.response.json() would throw "body stream already read".
+        const data: unknown = error.data
+        if (data && typeof data === 'object' && 'message' in data) {
+            errorMessage = String(data.message)
+        } else if (typeof data === 'string' && data) {
+            errorMessage = data
+        } else {
+            errorMessage = error.message
+        }
     } else if (error instanceof Error) {
         errorMessage = error.message
     }
@@ -38,6 +46,6 @@ export const resolveError = async (error?: unknown, process = true) => {
         return undefined
     }
 
-    process && toastError(errorMessage)
+    if (process) toastError(errorMessage)
     throw new Error(errorMessage)
 }

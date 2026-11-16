@@ -1,18 +1,25 @@
 import colors from './tailwind/colors'
-import defaultConfig from 'tailwindcss/stubs/config.full'
 import animation from './tailwind/animation'
 import variables from './tailwind/variables'
 
-module.exports = {
+import type { Config } from 'tailwindcss'
+import tailwindVariables from '@mertasan/tailwindcss-variables'
+import tailwindAnimate from 'tailwindcss-animate'
+import tailwindScrollbar from 'tailwind-scrollbar'
+
+// Tailwind v4 no longer ships `tailwindcss/stubs/config.full`; these are the v3 default stacks it provided.
+const sans = ['ui-sans-serif', 'system-ui', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"']
+
+export default {
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
     theme: {
         variables,
         fontFamily: {
-            kzen: ['Roboto Slab', defaultConfig.theme.fontFamily.sans],
-            allura: ['Allura', defaultConfig.theme.fontFamily.sans],
-            inter: ['Inter', defaultConfig.theme.fontFamily.sans],
-            atkinson: ['Atkinson Regular', defaultConfig.theme.fontFamily.sans],
-            montaga: ['Montaga', defaultConfig.theme.fontFamily.sans],
+            kzen: ['Roboto Slab', ...sans],
+            allura: ['Allura', ...sans],
+            inter: ['Inter', ...sans],
+            atkinson: ['Atkinson Regular', ...sans],
+            montaga: ['Montaga', ...sans],
         },
         extend: {
             colors,
@@ -27,8 +34,8 @@ module.exports = {
         },
     },
     plugins: [
-        require('@mertasan/tailwindcss-variables'),
-        require('tailwindcss-animate'),
-        require('tailwind-scrollbar'),
+        tailwindVariables,
+        tailwindAnimate,
+        tailwindScrollbar,
     ],
-}
+} satisfies Config

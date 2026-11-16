@@ -1,0 +1,161 @@
+/*
+ * Tailwind v4 entry.
+ * Tailwind v4 emits cascade layers, and unlayered CSS always beats layered CSS. To keep the v3 cascade,
+ * Bootstrap shares the `base` layer with Tailwind's preflight and is imported before it, so (as in v3)
+ * Bootstrap component classes still beat preflight element resets by specificity, preflight wins ties,
+ * and all Tailwind utilities win over Bootstrap.
+ */
+@layer theme, base, components, utilities;
+
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'bootstrap/dist/css/bootstrap.min.css' layer(base);
+@import 'tippy.js/dist/tippy.css' layer(base);
+@import 'tailwindcss/preflight.css' layer(base);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+/* Legacy JS config: theme, custom colors/variables, animations and plugins */
+@config '../../tailwind.config.ts';
+
+/* v3 behaviour: `hover:` also applies on touch devices (v4 limits it to @media (hover: hover)) */
+@custom-variant hover (&:hover);
+
+/* v3 compatibility for defaults that changed in v4 */
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: var(--color-gray-400);
+    }
+
+    button:not(:disabled),
+    [role='button']:not(:disabled) {
+        cursor: pointer;
+    }
+}
+
+/* ---------- base ---------- */
+
+@layer base {
+    .noselect {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .allselect {
+        -webkit-touch-callout: all;
+        -webkit-user-select: all;
+        -moz-user-select: all;
+        -ms-user-select: all;
+        user-select: all;
+    }
+
+    body {
+        @apply bg-white text-slate-800;
+    }
+
+    h1 {
+        @apply text-5xl md:text-7xl;
+    }
+}
+
+/* ---------- utilities ---------- */
+
+@utility absolute-center {
+    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+@utility overflow-wrap-anywhere {
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+}
+
+/* ---------- bootstrap theme overrides ---------- */
+
+@layer components {
+    /* accordion */
+    .accordion-button {
+        @apply cursor-default;
+        background-color: var(--colors-alpha) !important;
+        border-color: var(--colors-alpha) !important;
+        color: #fff !important;
+        transform: translateY(1px);
+    }
+
+    .accordion-button:hover,
+    .accordion-button:active,
+    .accordion-button:focus {
+        @apply cursor-default shadow-[0_0_0_0.25rem_rgba(var(--colors-alphaActiveRgba),0)]!;
+    }
+
+    .accordion-button::after,
+    .accordion-button:not(.collapsed)::after {
+        background-image: none;
+    }
+
+    /* buttons */
+    .custom-button-bg {
+        @apply bg-[#c0822b] border-alpha text-white;
+    }
+
+    .custom-button-bg:hover,
+    .custom-button-bg:focus,
+    .custom-button-bg:focus-visible,
+    .custom-button-bg:active,
+    .custom-button-bg:disabled {
+        @apply bg-[#c0822b]! border-alphaActive! shadow-[0_0_0_0.25rem_rgba(var(--colors-alphaActiveRgba),0.25)]!;
+    }
+
+    .custom-button-bg:active,
+    .error-button-bg:active {
+        transform: translateY(1px);
+    }
+
+    .error-button-bg {
+        @apply bg-rose-500 border-rose-300 text-white;
+    }
+
+    .error-button-bg:hover,
+    .error-button-bg:focus,
+    .error-button-bg:focus-visible,
+    .error-button-bg:active {
+        @apply bg-rose-500! border-rose-300! shadow-[0_0_0_0.25rem_rgba(var(--colors-errorRgba),0.25)]!;
+    }
+
+    /* form controls */
+    .form-control:focus,
+    .form-control:active,
+    .form-control:focus-visible,
+    .form-check-input:focus {
+        @apply border-alphaActive shadow-[0_0_0_0.25rem_rgba(var(--colors-alphaActiveRgba),0.25)];
+    }
+
+    .form-check-input:checked {
+        @apply bg-alphaActive border-alphaActive;
+    }
+
+    /* inputs */
+    input:not([type='checkbox']):read-only,
+    textarea:read-only {
+        @apply border-none hover:border-none active:border-none focus:border-none hover:shadow-none active:shadow-none focus:shadow-none;
+    }
+}
+
+/* ---------- unlayered (came after utilities in v3) ---------- */
+
+.custom-icon {
+    @apply text-alpha hover:text-alphaActive hover:scale-110 duration-300 cursor-pointer;
+}
+
+.custom-icon:hover {
+    @apply border-alphaActive! shadow-[0_0_0_0.25rem_rgba(var(--colors-alphaActiveRgba),0.25)]!;
+}
