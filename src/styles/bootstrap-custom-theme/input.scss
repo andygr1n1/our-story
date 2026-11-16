@@ -1,4 +1,0 @@
-input:not([type="checkbox"]):read-only,
-textarea:read-only {
-    @apply border-none hover:border-none active:border-none focus:border-none hover:shadow-none active:shadow-none focus:shadow-none;
-}

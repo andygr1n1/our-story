@@ -45,7 +45,7 @@ export const mutation_addGuests = async ({ values, language }: { values: IRegist
             }
         `)
 
-        values.solo && values.id2 && (await client.request(deleteGuestQuery, { id: values.id2 }))
+        if (values.solo && values.id2) await client.request(deleteGuestQuery, { id: values.id2 })
         /*  */
 
         const { objects } = guestsSnapshotOut({ values })
